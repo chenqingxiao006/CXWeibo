@@ -1,0 +1,31 @@
+//
+//  CXWeibo-Prefix.pch
+//  CXWeibo
+//
+//  Created by 陈擎霄 on 15/12/15.
+//  Copyright © 2015年 chenqingxiao007. All rights reserved.
+//
+
+#ifndef CXWeibo_Prefix_pch
+#define CXWeibo_Prefix_pch
+
+#import "UIView+Extension.h"
+
+#define SCREENWIDTH                       [UIScreen mainScreen].bounds.size.width
+#define SCREENHEIGHT                      [UIScreen mainScreen].bounds.size.height
+
+#define APPKEY                            @"1599995589"
+#define APPSECRET                         @"b8d6e31776659e3a48487d1cb9235b67"
+#define BASE_URL                          @"https://api.weibo.com"
+#define REDIRECT_URl                      @"http://www.baidu.com"
+#define ACCESS_TOKENURL                    @"https://api.weibo.com/oauth2/access_token"
+
+
+#define AUTHORIZE_URL [BASE_URL stringByAppendingPathComponent:@"oauth2/authorize"]
+
+
+
+
+
+
+#endif /* CXWeibo_Prefix_pch */
