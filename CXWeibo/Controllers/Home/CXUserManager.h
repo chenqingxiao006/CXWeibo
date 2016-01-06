@@ -65,4 +65,6 @@
 
 @property (strong, nonatomic) CXStatus *status;
 
+- (instancetype)initWithDic:(NSDictionary *)dic;
+
 @end

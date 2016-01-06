@@ -38,4 +38,6 @@
 
 @property (nonatomic, assign) NSInteger reposts_count;
 
+- (instancetype)initWithDic:(NSDictionary *)dic;
+
 @end
