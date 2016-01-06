@@ -129,7 +129,8 @@
         
         [CXNetManager getWithUrl:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
             
-            account.userManager = [[CXUserManager alloc] initWithDic:responseObject];
+            account.dic = responseObject;
+//            account.userManager = [[CXUserManager alloc] initWithDic:responseObject];
             
             // 2.保存到沙盒
             [[CXAccountTool shareAccountTool] saveAccount:account];

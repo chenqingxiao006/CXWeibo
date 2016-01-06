@@ -30,7 +30,9 @@
     [encoder encodeObject:_uid forKey:@"uid"];
     [encoder encodeObject:_uid forKey:@"expires_in"];
     [encoder encodeObject:_uid forKey:@"remind_in"];
-    [encoder encodeObject:_userManager forKey:@"userManager"];
+    
+    
+    [encoder encodeObject:_dic forKey:@"userManager"];
     /*
      "expires_in" = 157679999; 过期时间
      "remind_in" = 157679999;  过期提醒时间
@@ -45,9 +47,16 @@
         self.uid = [decoder decodeObjectForKey:@"uid"];
         self.expires_in = [decoder decodeObjectForKey:@"expires_in"];
         self.remind_in = [decoder decodeObjectForKey:@"remind_in"];
-        self.userManager = [decoder decodeObjectForKey:@"userManager"];
+        self.dic = [decoder decodeObjectForKey:@"userManager"];
     }
     return self;
+}
+
+- (CXUserManager *)userManager{
+    if (!_userManager) {
+        _userManager = [[CXUserManager alloc] initWithDic:self.dic];
+    }
+    return _userManager;
 }
 
 

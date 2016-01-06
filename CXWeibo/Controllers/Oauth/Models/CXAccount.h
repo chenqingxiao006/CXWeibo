@@ -11,6 +11,10 @@
 #import "CXUserManager.h"
 
 @interface CXAccount : NSObject
+/**
+ *  用户信息字典
+ */
+@property (strong, nonatomic) NSDictionary *dic;
 
 @property (strong, nonatomic) CXUserManager *userManager;
 
