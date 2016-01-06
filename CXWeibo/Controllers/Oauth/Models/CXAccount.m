@@ -19,23 +19,7 @@
     account.expires_in = [dic valueForKey:@"expires_in"];
     account.remind_in = [dic valueForKey:@"remind_in"];
     
-    //获取用户信息
-    
-    NSDictionary *params = @{
-                             @"access_token" : account.access_token,
-                             @"uid" :account.uid
-                             };
-    
-    [CXNetManager getWithUrl:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
-        
-        account.userManager = [[CXUserManager alloc] initWithDic:responseObject];
-        
-        
-    } failure:^(NSError *error) {
-        
-        account.userManager = nil;
-    }];
-    
+      
     return account;
 }
 

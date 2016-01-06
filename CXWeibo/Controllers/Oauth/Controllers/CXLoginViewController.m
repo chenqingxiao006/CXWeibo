@@ -118,16 +118,38 @@
 
         // 1.获取当前账号
         CXAccount *account = [CXAccount accountWithDic:responseObject];
-        // 2.保存到沙盒
-        [[CXAccountTool shareAccountTool] saveAccount:account];
         
-        // 3.提示信息
-        [CXProgressHUD hidenForView:self.view];
-        [CXProgressHUD showMessage:@"登录成功" durationTime:1.2 completionBlock:^{
-            // 切换到首页
-            self.view.window.rootViewController = [[CXTabBarViewController alloc] init];
+        // 1.5
+        //获取用户信息
+        
+        NSDictionary *params = @{
+                                 @"access_token" : account.access_token,
+                                 @"uid" :account.uid
+                                 };
+        
+        [CXNetManager getWithUrl:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
             
-        } inView:self.view];
+            account.userManager = [[CXUserManager alloc] initWithDic:responseObject];
+            
+            // 2.保存到沙盒
+            [[CXAccountTool shareAccountTool] saveAccount:account];
+            
+            // 3.提示信息
+            [CXProgressHUD hidenForView:self.view];
+            [CXProgressHUD showMessage:@"登录成功" durationTime:1.2 completionBlock:^{
+                // 切换到首页
+                self.view.window.rootViewController = [[CXTabBarViewController alloc] init];
+                
+            } inView:self.view];
+            
+        } failure:^(NSError *error) {
+            
+            account.userManager = nil;
+        }];
+
+        
+        
+       
         
     } failure:^(NSError *error) {
         // 授权失败
