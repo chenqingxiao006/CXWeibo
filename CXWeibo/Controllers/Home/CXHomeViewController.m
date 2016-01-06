@@ -36,6 +36,8 @@
     CXAccount *account = [CXAccountTool shareAccountTool].account;
     NSLog(@"%@",account.userManager.name);
     
+#warning 可能会有问题，先记录下
+    NSLog(@"%@",account.userManager.status);
 }
 #pragma mark - Table view data source
 
