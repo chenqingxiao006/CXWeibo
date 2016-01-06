@@ -8,8 +8,12 @@
 
 
 #import <Foundation/Foundation.h>
+#import "CXUserManager.h"
 
 @interface CXAccount : NSObject
+
+@property (strong, nonatomic) CXUserManager *userManager;
+
 /**
  *  accessToken
  */

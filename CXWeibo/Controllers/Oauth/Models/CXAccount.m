@@ -7,6 +7,7 @@
 //
 
 #import "CXAccount.h"
+#import "CXNetManager.h"
 
 @implementation CXAccount
 
@@ -17,6 +18,24 @@
     account.uid = [dic valueForKey:@"uid"];
     account.expires_in = [dic valueForKey:@"expires_in"];
     account.remind_in = [dic valueForKey:@"remind_in"];
+    
+    //获取用户信息
+    
+    NSDictionary *params = @{
+                             @"access_token" : account.access_token,
+                             @"uid" :account.uid
+                             };
+    
+    [CXNetManager getWithUrl:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
+        
+        account.userManager = [[CXUserManager alloc] initWithDic:responseObject];
+        
+        
+    } failure:^(NSError *error) {
+        
+        account.userManager = nil;
+    }];
+    
     return account;
 }
 
@@ -27,6 +46,7 @@
     [encoder encodeObject:_uid forKey:@"uid"];
     [encoder encodeObject:_uid forKey:@"expires_in"];
     [encoder encodeObject:_uid forKey:@"remind_in"];
+    [encoder encodeObject:_userManager forKey:@"userManager"];
     /*
      "expires_in" = 157679999; 过期时间
      "remind_in" = 157679999;  过期提醒时间
@@ -41,6 +61,7 @@
         self.uid = [decoder decodeObjectForKey:@"uid"];
         self.expires_in = [decoder decodeObjectForKey:@"expires_in"];
         self.remind_in = [decoder decodeObjectForKey:@"remind_in"];
+        self.userManager = [decoder decodeObjectForKey:@"userManager"];
     }
     return self;
 }

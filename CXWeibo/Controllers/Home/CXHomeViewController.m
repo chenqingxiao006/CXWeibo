@@ -11,6 +11,7 @@
 #import "CXNetManager.h"
 #import "CXAccount.h"
 #import "CXProgressHUD.h"
+#import "CXUserManager.h"
 
 
 
@@ -31,29 +32,9 @@
 
 
 - (void)getUserInfo{
-// https://api.weibo.com/2/users/show.json
     
     CXAccount *account = [CXAccountTool shareAccountTool].account;
-    NSDictionary *params = @{
-                             @"access_token" : account.access_token,
-                             @"uid" :account.uid
-                             };
-    
-
-    [CXNetManager getWithUrl:@"https://api.weibo.com/2/statuses/friends_timeline.json" params:params success:^(id responseObject) {
-
-        [CXProgressHUD showMessage:[responseObject valueForKey:@"description"] durationTime:1.2 completionBlock:^{
-            self.listData = [responseObject valueForKey:@"statuses"];
-            [self.tableView reloadData];
-            
-        } inView:self.view];
-        
-        
-    } failure:^(NSError *error) {
-        
-        NSLog(@"%@",error);
-    }];
-    
+    NSLog(@"%@",account.userManager.name);
 }
 #pragma mark - Table view data source
 
