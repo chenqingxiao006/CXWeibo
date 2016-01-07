@@ -10,4 +10,10 @@
 
 @interface CXBaseViewController : UITableViewController
 
+@property (assign, nonatomic) BOOL ifAddPullToRefreshControl;
+
+@property (strong, nonatomic) NSArray *listData;
+
+- (void)loadNewer;
+
 @end

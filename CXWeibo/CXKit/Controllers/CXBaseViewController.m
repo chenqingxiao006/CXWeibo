@@ -7,6 +7,7 @@
 //
 
 #import "CXBaseViewController.h"
+#import "MJRefresh.h"
 
 @interface CXBaseViewController ()
 
@@ -16,16 +17,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self loadNewer];
+    if (self.ifAddPullToRefreshControl) {
+        // 添加下拉刷新
+        [self addPullToRefreshControl];
+    }
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/**
+ *  下拉刷新
+ */
+- (void)addPullToRefreshControl {
+    
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+    }];
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reFreshData)];
+    
+
+}
+- (void)reFreshData{
+    [self loadNewer];
+}
+
+- (void)loadNewer{
+    
 }
 
 #pragma mark - Table view data source

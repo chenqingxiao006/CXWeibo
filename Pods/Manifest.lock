@@ -22,15 +22,18 @@ PODS:
     - AFNetworking/NSURLSession
   - MBProgressHUD (0.9.1)
   - MJExtension (2.5.9)
+  - MJRefresh (2.4.8)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - MBProgressHUD (~> 0.9.1)
   - MJExtension
+  - MJRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
+  MJRefresh: 887c9ee5ff155533d7d9c20098bebb7b847b2fcb
 
 COCOAPODS: 0.39.0

@@ -16,23 +16,24 @@
 #import "CXHomeStatue.h"
 
 @interface CXHomeViewController ()
-@property (strong, nonatomic) NSArray *listData;
+
 @end
 
 @implementation CXHomeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
 
     self.title = @"首页";
-    [self loadNewer];
     
+    self.ifAddPullToRefreshControl = YES;
     
+    [super viewDidLoad];
+
     
 }
 
 - (void)loadNewer{
-    
+    [super loadNewer];
     CXAccount *account = [CXAccountTool shareAccountTool].account;
     NSDictionary *params = @{
                              @"access_token" : account.access_token,
@@ -43,12 +44,11 @@
     
     [CXNetManager getWithUrl:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
         CXHomeModel *homeModel = [[CXHomeModel alloc] initWithDic:responseObject];
+
         
-        CXHomeStatue *statue = homeModel.homeStatuses[0];
+        self.listData = homeModel.homeStatuses;
         
-        NSLog(@"%@",statue.text);
-        
-        
+        [self.tableView reloadData];
     } failure:^(NSError *error) {
         
         NSLog(@"%@",error);
@@ -79,7 +79,11 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
-        cell.textLabel.text = [[self.listData[indexPath.row] valueForKey:@"retweeted_status"] valueForKey:@"text"];
+        
+        
+        CXHomeStatue *statue = self.listData[indexPath.row];
+        
+        cell.textLabel.text = statue.text;
 
     }
     
