@@ -12,8 +12,8 @@
 #import "CXAccount.h"
 #import "CXProgressHUD.h"
 #import "CXUserManager.h"
-
-
+#import "CXHomeModel.h"
+#import "CXHomeStatue.h"
 
 @interface CXHomeViewController ()
 @property (strong, nonatomic) NSArray *listData;
@@ -26,19 +26,28 @@
 
     self.title = @"首页";
     [self loadNewer];
+    
+    
+    
 }
+
 - (void)loadNewer{
     
     CXAccount *account = [CXAccountTool shareAccountTool].account;
     NSDictionary *params = @{
                              @"access_token" : account.access_token,
-                             @"uid" :account.uid
+                             @"uid" :account.uid,
+                             @"feature":@1
                              };
 
     
     [CXNetManager getWithUrl:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
+        CXHomeModel *homeModel = [[CXHomeModel alloc] initWithDic:responseObject];
         
-        NSLog(@"%@",responseObject);
+        CXHomeStatue *statue = homeModel.homeStatuses[0];
+        
+        NSLog(@"%@",statue.text);
+        
         
     } failure:^(NSError *error) {
         

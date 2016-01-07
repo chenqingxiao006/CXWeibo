@@ -20,6 +20,7 @@
 		9537A6941C1FEA8F006EEF33 /* CXWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6931C1FEA8F006EEF33 /* CXWeiboUITests.m */; };
 		953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F21F01C3267C000D50649 /* CXBaseGradientView.m */; };
 		95466E681C3E400F00A53E2E /* CXHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 95466E671C3E400F00A53E2E /* CXHomeModel.m */; };
+		95466E6B1C3E449900A53E2E /* CXHomeStatue.m in Sources */ = {isa = PBXBuildFile; fileRef = 95466E6A1C3E449900A53E2E /* CXHomeStatue.m */; };
 		955374EE1C2006E2004C933D /* CXTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374ED1C2006E2004C933D /* CXTabBarViewController.m */; };
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
 		955375011C2047DB004C933D /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375001C2047DB004C933D /* CXBaseViewController.m */; };
@@ -81,6 +82,8 @@
 		953F21F01C3267C000D50649 /* CXBaseGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseGradientView.m; sourceTree = "<group>"; };
 		95466E661C3E400F00A53E2E /* CXHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHomeModel.h; sourceTree = "<group>"; };
 		95466E671C3E400F00A53E2E /* CXHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHomeModel.m; sourceTree = "<group>"; };
+		95466E691C3E449900A53E2E /* CXHomeStatue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHomeStatue.h; sourceTree = "<group>"; };
+		95466E6A1C3E449900A53E2E /* CXHomeStatue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHomeStatue.m; sourceTree = "<group>"; };
 		955374EC1C2006E2004C933D /* CXTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXTabBarViewController.h; path = ../../CXTabBarViewController.h; sourceTree = "<group>"; };
 		955374ED1C2006E2004C933D /* CXTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXTabBarViewController.m; path = ../../CXTabBarViewController.m; sourceTree = "<group>"; };
 		955374EF1C200B39004C933D /* CXWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CXWeibo-Prefix.pch"; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			children = (
 				95466E661C3E400F00A53E2E /* CXHomeModel.h */,
 				95466E671C3E400F00A53E2E /* CXHomeModel.m */,
+				95466E691C3E449900A53E2E /* CXHomeStatue.h */,
+				95466E6A1C3E449900A53E2E /* CXHomeStatue.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				950CFF8A1C2288BD001FAC4E /* CXTabBar.m in Sources */,
 				9537A6701C1FEA8F006EEF33 /* main.m in Sources */,
 				95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */,
+				95466E6B1C3E449900A53E2E /* CXHomeStatue.m in Sources */,
 				955396FD1C338B8A00CA2014 /* CXStatus.m in Sources */,
 				95226E861C216BF0006DC853 /* CXAccount.m in Sources */,
 				9553750D1C2048B9004C933D /* CXSearchViewController.m in Sources */,

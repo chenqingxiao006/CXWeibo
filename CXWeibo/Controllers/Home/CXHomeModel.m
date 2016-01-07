@@ -7,11 +7,21 @@
 //
 
 #import "CXHomeModel.h"
+#import "CXHomeStatue.h"
 
 @implementation CXHomeModel
 
 - (instancetype)initWithDic:(NSDictionary *)dic{
     if (self = [super init]) {
+        self.homeStatuses = [[NSMutableArray alloc] init];
+        NSArray *array = [dic valueForKey:@"statuses"];
+        
+        for (NSDictionary *statueDic in array) {
+            CXHomeStatue *statue = [[CXHomeStatue alloc] initWithDic:statueDic];
+            
+            
+            [self.homeStatuses addObject:statue];
+        }
         
     }
     return self;

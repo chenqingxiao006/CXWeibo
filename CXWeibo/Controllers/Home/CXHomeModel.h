@@ -10,6 +10,12 @@
 
 @interface CXHomeModel : NSObject
 
+
+
+@property (strong, nonatomic) NSMutableArray *homeStatuses;
+
+
+
 - (instancetype)initWithDic:(NSDictionary *)dic;
 
 @end
