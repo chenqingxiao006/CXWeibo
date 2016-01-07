@@ -25,20 +25,29 @@
     [super viewDidLoad];
 
     self.title = @"首页";
-    
-
-    [self getUserInfo];
+    [self loadNewer];
 }
-
-
-- (void)getUserInfo{
+- (void)loadNewer{
     
     CXAccount *account = [CXAccountTool shareAccountTool].account;
-    NSLog(@"%@",account.userManager.name);
+    NSDictionary *params = @{
+                             @"access_token" : account.access_token,
+                             @"uid" :account.uid
+                             };
+
     
-#warning 可能会有问题，先记录下
-    NSLog(@"%@",account.userManager.status);
+    [CXNetManager getWithUrl:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
+        
+        NSLog(@"%@",responseObject);
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"%@",error);
+        
+    }];
+    
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

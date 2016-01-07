@@ -95,10 +95,10 @@
 		9553750C1C2048B9004C933D /* CXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchViewController.m; sourceTree = "<group>"; };
 		955396F41C337D9700CA2014 /* CXStatusTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXStatusTools.h; sourceTree = "<group>"; };
 		955396F51C337D9700CA2014 /* CXStatusTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXStatusTools.m; sourceTree = "<group>"; };
-		955396F81C337E0300CA2014 /* CXUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXUserManager.h; sourceTree = "<group>"; };
-		955396F91C337E0300CA2014 /* CXUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXUserManager.m; sourceTree = "<group>"; };
-		955396FB1C338B8A00CA2014 /* CXStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXStatus.h; sourceTree = "<group>"; };
-		955396FC1C338B8A00CA2014 /* CXStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXStatus.m; sourceTree = "<group>"; };
+		955396F81C337E0300CA2014 /* CXUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXUserManager.h; path = ../../Home/CXUserManager.h; sourceTree = "<group>"; };
+		955396F91C337E0300CA2014 /* CXUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXUserManager.m; path = ../../Home/CXUserManager.m; sourceTree = "<group>"; };
+		955396FB1C338B8A00CA2014 /* CXStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXStatus.h; path = ../../Home/CXStatus.h; sourceTree = "<group>"; };
+		955396FC1C338B8A00CA2014 /* CXStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXStatus.m; path = ../../Home/CXStatus.m; sourceTree = "<group>"; };
 		959712341C20FFF5000AF631 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		959712351C20FFF5000AF631 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		B7428FA0EF650175DEC9AEC6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +158,10 @@
 			children = (
 				95226E841C216BF0006DC853 /* CXAccount.h */,
 				95226E851C216BF0006DC853 /* CXAccount.m */,
+				955396F81C337E0300CA2014 /* CXUserManager.h */,
+				955396F91C337E0300CA2014 /* CXUserManager.m */,
+				955396FB1C338B8A00CA2014 /* CXStatus.h */,
+				955396FC1C338B8A00CA2014 /* CXStatus.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,10 +358,6 @@
 		955396F71C337DD500CA2014 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				955396F81C337E0300CA2014 /* CXUserManager.h */,
-				955396F91C337E0300CA2014 /* CXUserManager.m */,
-				955396FB1C338B8A00CA2014 /* CXStatus.h */,
-				955396FC1C338B8A00CA2014 /* CXStatus.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
