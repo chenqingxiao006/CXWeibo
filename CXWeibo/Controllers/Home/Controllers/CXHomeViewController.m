@@ -14,6 +14,8 @@
 #import "CXUserManager.h"
 #import "CXHomeModel.h"
 #import "CXHomeStatue.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface CXHomeViewController ()
 
@@ -81,12 +83,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifer];
     }
     
     CXHomeStatue *statue = self.listData[indexPath.row];
     
     cell.textLabel.text = statue.text;
+    cell.detailTextLabel.text = statue.screen_name;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:statue.thumbnail_pic]];
     
     return cell;
  }
