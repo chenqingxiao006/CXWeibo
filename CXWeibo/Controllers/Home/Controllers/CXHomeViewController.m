@@ -45,6 +45,10 @@
                 CXHomeModel *homeModel = [[CXHomeModel alloc] initWithDic:responseObject];
 
         self.listData = homeModel.homeStatuses;
+        CXHomeStatue *statue = self.listData[0];
+        
+        NSLog(@"%@",statue);
+        
         
         [self.tableView reloadData];
         
@@ -78,13 +82,11 @@
     
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifer];
-        
-        
-        CXHomeStatue *statue = self.listData[indexPath.row];
-        
-        cell.textLabel.text = statue.text;
-
     }
+    
+    CXHomeStatue *statue = self.listData[indexPath.row];
+    
+    cell.textLabel.text = statue.text;
     
     return cell;
  }
