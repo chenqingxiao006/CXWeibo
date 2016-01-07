@@ -40,22 +40,21 @@
                              @"uid" :account.uid,
                              @"feature":@1
                              };
-
     
-    [CXNetManager getWithUrl:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
-        CXHomeModel *homeModel = [[CXHomeModel alloc] initWithDic:responseObject];
+    [self loadWithUrlStr:@"https://api.weibo.com/2/statuses/home_timeline.json" requestMode:RequestModeGet params:params completed:^(id responseObject) {
+                CXHomeModel *homeModel = [[CXHomeModel alloc] initWithDic:responseObject];
 
-        
         self.listData = homeModel.homeStatuses;
         
         [self.tableView reloadData];
-    } failure:^(NSError *error) {
         
-        NSLog(@"%@",error);
+    } failed:^(NSError *error) {
         
-    }];
+    } showLodingView:YES];
     
 }
+
+
 
 #pragma mark - Table view data source
 

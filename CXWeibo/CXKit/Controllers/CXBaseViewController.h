@@ -7,12 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^RequestCompletedHandleBlock)(id responseObject);
+typedef void (^RequestFailedHandleBlock)(NSError *error);
+typedef enum {
+
+    RequestModeGet,
+    RequestModePost
+}RequestMode;
 
 @interface CXBaseViewController : UITableViewController
 
 @property (assign, nonatomic) BOOL ifAddPullToRefreshControl;
 
-@property (strong, nonatomic) NSArray *listData;
+@property (strong, nonatomic) NSMutableArray *listData;
+
+
+- (void)loadWithUrlStr:(NSString *)request
+            requestMode:(RequestMode)requestMode
+            params:(NSDictionary *)params
+            completed:(RequestCompletedHandleBlock)completeHandleBlock
+            failed:(RequestFailedHandleBlock)failedHandleBlock
+            showLodingView:(BOOL)show;
+
+
 
 - (void)loadNewer;
 

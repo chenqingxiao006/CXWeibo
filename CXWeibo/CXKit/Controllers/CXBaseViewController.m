@@ -8,6 +8,8 @@
 
 #import "CXBaseViewController.h"
 #import "MJRefresh.h"
+#import "CXProgressHUD.h"
+#import "CXNetManager.h"
 
 @interface CXBaseViewController ()
 
@@ -32,81 +34,65 @@
     
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
+        [self loadNewer];
     }];
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reFreshData)];
-    
-
-}
-- (void)reFreshData{
-    [self loadNewer];
 }
 
 - (void)loadNewer{
     
 }
 
-#pragma mark - Table view data source
+#pragma mark - event
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (void)loadWithUrlStr:(NSString *)request requestMode:(RequestMode)requestMode params:(NSDictionary *)params completed:(RequestCompletedHandleBlock)completeHandleBlock failed:(RequestFailedHandleBlock)failedHandleBlock showLodingView:(BOOL)show{
     
-    // Configure the cell...
-    
-    return cell;
+    if (show) {
+        [CXProgressHUD showLoadingInView:self.tableView];
+    }
+
+    if (requestMode == RequestModeGet) {
+        // get
+        
+        [CXNetManager getWithUrl:request params:params success:^(id responseObject) {
+            [CXProgressHUD hidenForView:self.tableView];
+            completeHandleBlock(responseObject);
+            [self.tableView.header endRefreshing];
+            
+            
+        } failure:^(NSError *error) {
+            [CXProgressHUD hidenForView:self.tableView];
+            [self.tableView.header endRefreshing];
+            if (failedHandleBlock) {
+                failedHandleBlock(error);
+            }
+            
+        }];
+        
+    }else{
+        // post
+        [CXNetManager postWithUrl:request params:params success:^(id responseObject) {
+            [CXProgressHUD hidenForView:self.tableView];
+            completeHandleBlock(responseObject);
+            [self.tableView.header endRefreshing];
+            
+        } failure:^(NSError *error) {
+            [CXProgressHUD hidenForView:self.tableView];
+            [self.tableView.header endRefreshing];
+            if (failedHandleBlock) {
+                failedHandleBlock(error);
+            }
+        }];
+    }
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
+
+
+
+
+
+
+
+
+
+
