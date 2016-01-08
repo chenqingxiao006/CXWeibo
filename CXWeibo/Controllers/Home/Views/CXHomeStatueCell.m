@@ -63,14 +63,15 @@
     [self addSubview:self.picView];
     
     
-    self.height = self.screen_name_label.height + self.text_label.height + 40 + self.picView.height + 20;
+    self.height = self.screen_name_label.height + self.text_label.height + 40 + self.picView.height + 30;
 }
 
 
 - (UIImageView *)profile_image_url_imageView{
     if (!_profile_image_url_imageView) {
         _profile_image_url_imageView = [[UIImageView alloc] init];
-         _profile_image_url_imageView.frame = CGRectMake(0, 10, 50, 50);
+         _profile_image_url_imageView.frame = CGRectMake(10, 10, 40, 40);
+        _profile_image_url_imageView.layer.cornerRadius = 20;
     }
     return _profile_image_url_imageView;
 }
@@ -78,6 +79,7 @@
 - (UILabel *)screen_name_label{
     if (!_screen_name_label) {
         _screen_name_label = [[UILabel alloc] init];
+        _screen_name_label.font = [UIFont systemFontOfSize:14];
     }
     return _screen_name_label;
 }
