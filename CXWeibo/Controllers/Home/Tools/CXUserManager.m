@@ -7,7 +7,6 @@
 //
 
 #import "CXUserManager.h"
-#import "CXStatus.h"
 
 @implementation CXUserManager
 
@@ -37,7 +36,7 @@
         self.following = [dic valueForKey:@"following"];
         self.created_at = [dic valueForKey:@"created_at"];
         self.description_CXWeibo = [dic valueForKey:@"description_CXWeibo"];
-        self.status = [[CXStatus alloc] initWithDic:[dic valueForKey:@"status"]];
+//        self.status = [[CXStatus alloc] initWithDic:[dic valueForKey:@"status"]];
 //
     }
     return self;

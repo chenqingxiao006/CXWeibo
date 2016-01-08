@@ -25,6 +25,12 @@
  */
 @property (copy, nonatomic) NSString *text;
 
+
+/**
+ *  图片数组
+ */
+@property (strong, nonatomic) NSArray *pic_urls;
+
 /**
  *  图片
  */

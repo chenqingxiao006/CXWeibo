@@ -35,7 +35,6 @@
 		DDB2046F1C3E5BB600107B51 /* CXStatusTools.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2046B1C3E5BB600107B51 /* CXStatusTools.m */; };
 		DDB204701C3E5BB600107B51 /* CXUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB2046E1C3E5BB600107B51 /* CXUserManager.m */; };
 		DDB204751C3E5BD000107B51 /* CXHomeStatue.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB204721C3E5BD000107B51 /* CXHomeStatue.m */; };
-		DDB204761C3E5BD000107B51 /* CXStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB204741C3E5BD000107B51 /* CXStatus.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,8 +114,6 @@
 		DDB2046E1C3E5BB600107B51 /* CXUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXUserManager.m; sourceTree = "<group>"; };
 		DDB204711C3E5BD000107B51 /* CXHomeStatue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHomeStatue.h; sourceTree = "<group>"; };
 		DDB204721C3E5BD000107B51 /* CXHomeStatue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHomeStatue.m; sourceTree = "<group>"; };
-		DDB204731C3E5BD000107B51 /* CXStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXStatus.h; sourceTree = "<group>"; };
-		DDB204741C3E5BD000107B51 /* CXStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXStatus.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,10 +399,8 @@
 			children = (
 				DDB204711C3E5BD000107B51 /* CXHomeStatue.h */,
 				DDB204721C3E5BD000107B51 /* CXHomeStatue.m */,
-				DDB204731C3E5BD000107B51 /* CXStatus.h */,
-				DDB204741C3E5BD000107B51 /* CXStatus.m */,
-				DDB204671C3E5B8900107B51 /* CXHomeModel.m */,
 				DDB204681C3E5B8900107B51 /* CXHomeModel.h */,
+				DDB204671C3E5B8900107B51 /* CXHomeModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -615,7 +610,6 @@
 				955375011C2047DB004C933D /* CXBaseViewController.m in Sources */,
 				DD9AD0D61C3D30DE0008A5E2 /* CXLoginViewController.m in Sources */,
 				95226E791C21514D006DC853 /* CXProgressHUD.m in Sources */,
-				DDB204761C3E5BD000107B51 /* CXStatus.m in Sources */,
 				955375071C204841004C933D /* CXMessageViewController.m in Sources */,
 				DD9AD0D71C3D30DE0008A5E2 /* CXOauthController.m in Sources */,
 				DDB2046F1C3E5BB600107B51 /* CXStatusTools.m in Sources */,
