@@ -26,6 +26,7 @@
         [self addSubview:self.profile_image_url_imageView];
         [self addSubview:self.screen_name_label];
         [self addSubview:self.text_label];
+        
     }
     return self;
 }
@@ -51,11 +52,18 @@
     self.text_label.numberOfLines = 0;
     
     [self.text_label sizeToFit];
-    self.text_label.x = self.screen_name_label.x;
-//    self.text_label.maxY = self.profile_image_url_imageView.maxY;
-    
+    self.text_label.x = self.screen_name_label.x;    
     self.text_label.y = self.screen_name_label.maxY + 20;
     
+    
+    self.height = self.cellHeight;
+}
+
+- (CGFloat)cellHeight{
+    if (!_cellHeight) {
+        _cellHeight = self.screen_name_label.height + self.text_label.height + 40;
+    }
+    return _cellHeight;
 }
 
 - (UIImageView *)profile_image_url_imageView{

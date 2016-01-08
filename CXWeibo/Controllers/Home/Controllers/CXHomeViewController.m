@@ -30,7 +30,7 @@
     self.ifAddPullToRefreshControl = YES;
     
     [super viewDidLoad];
-    self.tableView.rowHeight = 250;
+//    self.tableView.rowHeight = 250;
     
 }
 
@@ -93,7 +93,16 @@
     return cell;
  }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+//    CXHomeStatueCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+   
+    // 這裏返回需要的高度
+    
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.height;
 
+}
 
 
 @end
