@@ -31,9 +31,17 @@
                 [self addSubview:imageView];
                 imageView.backgroundColor = [UIColor clearColor];
                 // 图片
-                [imageView sd_setImageWithURL:[NSURL URLWithString:[pic_urls[i] valueForKey:@"thumbnail_pic"]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                [imageView sd_setImageWithURL:[NSURL URLWithString:[pic_urls[i] valueForKey:@"thumbnail_pic"]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    
+//                }];
+                
+                [imageView sd_setImageWithURL:[NSURL URLWithString:[pic_urls[i] valueForKey:@"thumbnail_pic"]] placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     
                 }];
+                
+                
+                
+                
                 // 设置size
                 imageView.size = CGSizeMake(imageWidth, imageWidth);
                 // 设置坐标

@@ -54,13 +54,15 @@
     self.text_label.y = self.screen_name_label.maxY + 20;
     
     
-    
-    
-    self.picView = [[CXStatuePicView alloc] initWithPic_urls:_statue.pic_urls];
-    
+    if (!self.picView) {
+        self.picView = [[CXStatuePicView alloc] initWithPic_urls:_statue.pic_urls];
+        
+        
+        self.picView.origin = CGPointMake(self.screen_name_label.x, self.text_label.maxY + 20);
+        [self addSubview:self.picView];
+        
 
-    self.picView.origin = CGPointMake(self.screen_name_label.x, self.text_label.maxY + 20);
-    [self addSubview:self.picView];
+    }
     
     
     self.height = self.screen_name_label.height + self.text_label.height + 40 + self.picView.height + 30;
