@@ -24,16 +24,12 @@
 @implementation CXHomeViewController
 
 - (void)viewDidLoad {
-
     self.title = @"首页";
-    
     self.ifAddPullToRefreshControl = YES;
-    
     [super viewDidLoad];
-//    self.tableView.rowHeight = 250;
-    
 }
 
+#pragma mark - 继承父类
 - (void)loadNewer{
     [super loadNewer];
     CXAccount *account = [CXAccountTool shareAccountTool].account;
@@ -60,8 +56,6 @@
     
 }
 
-
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -69,49 +63,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     return self.listData.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    
-    
     static NSString *cellIdentifer = @"reuseCell";
-    
     CXHomeStatueCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
-    
     if (!cell) {
-        cell = [[CXHomeStatueCell alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 250)];
+        cell = [[CXHomeStatueCell alloc] init];
     }
-    
     CXHomeStatue *statue = self.listData[indexPath.row];
-    
     cell.statue = statue;
-
     return cell;
  }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    CXHomeStatueCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-   
-    // 這裏返回需要的高度
-    
     UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
     return cell.height;
-
 }
 
-
 @end
-
-
-
-
-
-
-
-
-

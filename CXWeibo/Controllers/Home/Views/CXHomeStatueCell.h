@@ -11,5 +11,4 @@
 
 @interface CXHomeStatueCell : UITableViewCell
 @property (strong, nonatomic) CXHomeStatue *statue;
-@property (assign, nonatomic) CGFloat cellHeight;
 @end
