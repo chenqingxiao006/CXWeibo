@@ -19,6 +19,7 @@
 		9537A6891C1FEA8F006EEF33 /* CXWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6881C1FEA8F006EEF33 /* CXWeiboTests.m */; };
 		9537A6941C1FEA8F006EEF33 /* CXWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6931C1FEA8F006EEF33 /* CXWeiboUITests.m */; };
 		953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F21F01C3267C000D50649 /* CXBaseGradientView.m */; };
+		95466E7D1C3F59B800A53E2E /* CXHomeStatueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95466E7B1C3F59B800A53E2E /* CXHomeStatueCell.m */; };
 		955374EE1C2006E2004C933D /* CXTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374ED1C2006E2004C933D /* CXTabBarViewController.m */; };
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
 		955375011C2047DB004C933D /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375001C2047DB004C933D /* CXBaseViewController.m */; };
@@ -80,6 +81,8 @@
 		9537A6951C1FEA8F006EEF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		953F21EF1C3267C000D50649 /* CXBaseGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXBaseGradientView.h; sourceTree = "<group>"; };
 		953F21F01C3267C000D50649 /* CXBaseGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseGradientView.m; sourceTree = "<group>"; };
+		95466E7A1C3F59B800A53E2E /* CXHomeStatueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHomeStatueCell.h; sourceTree = "<group>"; };
+		95466E7B1C3F59B800A53E2E /* CXHomeStatueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHomeStatueCell.m; sourceTree = "<group>"; };
 		955374EC1C2006E2004C933D /* CXTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXTabBarViewController.h; path = ../../CXTabBarViewController.h; sourceTree = "<group>"; };
 		955374ED1C2006E2004C933D /* CXTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXTabBarViewController.m; path = ../../CXTabBarViewController.m; sourceTree = "<group>"; };
 		955374EF1C200B39004C933D /* CXWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CXWeibo-Prefix.pch"; sourceTree = "<group>"; };
@@ -232,6 +235,15 @@
 			path = CXWeiboUITests;
 			sourceTree = "<group>";
 		};
+		95466E6E1C3E8FAF00A53E2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95466E7A1C3F59B800A53E2E /* CXHomeStatueCell.h */,
+				95466E7B1C3F59B800A53E2E /* CXHomeStatueCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		955374F01C2013F7004C933D /* CXKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +315,7 @@
 		955374F61C20178B004C933D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				95466E6E1C3E8FAF00A53E2E /* Views */,
 				DDB2046A1C3E5BA100107B51 /* Tools */,
 				DDB204661C3E5B6000107B51 /* Models */,
 				DDB2045F1C3E5AFE00107B51 /* Controllers */,
@@ -479,6 +492,7 @@
 				TargetAttributes = {
 					9537A66A1C1FEA8F006EEF33 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = VT3993C8RL;
 					};
 					9537A6831C1FEA8F006EEF33 = {
 						CreatedOnToolsVersion = 7.2;
@@ -596,6 +610,7 @@
 				959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */,
 				953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */,
 				955374FE1C203C21004C933D /* CXNavigationController.m in Sources */,
+				95466E7D1C3F59B800A53E2E /* CXHomeStatueCell.m in Sources */,
 				9553750A1C20488B004C933D /* CXPersonalViewController.m in Sources */,
 				955375011C2047DB004C933D /* CXBaseViewController.m in Sources */,
 				DD9AD0D61C3D30DE0008A5E2 /* CXLoginViewController.m in Sources */,
@@ -743,12 +758,15 @@
 			baseConfigurationReference = 66EC25EE28688D690C05EA31 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "CXWeibo/CXWeibo-Prefix.pch";
 				INFOPLIST_FILE = CXWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chenqingxiao007-CXWeibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -757,12 +775,15 @@
 			baseConfigurationReference = 5685E7CA60E237B822641285 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "CXWeibo/CXWeibo-Prefix.pch";
 				INFOPLIST_FILE = CXWeibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chenqingxiao007-CXWeibo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

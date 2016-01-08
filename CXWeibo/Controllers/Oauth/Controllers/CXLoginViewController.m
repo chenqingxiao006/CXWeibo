@@ -43,7 +43,6 @@
     
     self.view = webView;
 
-    
     NSString *urlStr = [AUTHORIZE_URL stringByAppendingFormat:@"?display=mobile&client_id=%@&redirect_uri=%@", APPKEY, REDIRECT_URl];
     NSURL *url = [NSURL URLWithString:urlStr];
     
@@ -147,10 +146,6 @@
             
             account.userManager = nil;
         }];
-
-        
-        
-       
         
     } failure:^(NSError *error) {
         // 授权失败

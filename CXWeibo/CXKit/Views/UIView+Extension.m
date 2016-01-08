@@ -55,6 +55,27 @@
     return self.center.y;
 }
 
+- (void)setMaxX:(CGFloat)maxX{
+    CGRect frame = self.frame;
+    frame.origin.x = maxX - frame.size.width;
+    self.frame = frame;
+}
+
+- (CGFloat)maxX{
+    return CGRectGetMaxX(self.frame);
+}
+
+- (void)setMaxY:(CGFloat)maxY{
+    CGRect frame = self.frame;
+    frame.origin.y = maxY - frame.size.height;
+    self.frame = frame;
+}
+
+- (CGFloat)maxY{
+    return CGRectGetMaxY(self.frame);
+}
+
+
 - (void)setWidth:(CGFloat)width
 {
     CGRect frame = self.frame;

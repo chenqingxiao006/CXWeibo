@@ -15,7 +15,7 @@
 #import "CXHomeModel.h"
 #import "CXHomeStatue.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import "CXHomeStatueCell.h"
 
 @interface CXHomeViewController ()
 
@@ -30,7 +30,7 @@
     self.ifAddPullToRefreshControl = YES;
     
     [super viewDidLoad];
-
+    self.tableView.rowHeight = 250;
     
 }
 
@@ -80,18 +80,16 @@
     
     static NSString *cellIdentifer = @"reuseCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
+    CXHomeStatueCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifer];
+        cell = [[CXHomeStatueCell alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 250)];
     }
     
     CXHomeStatue *statue = self.listData[indexPath.row];
     
-    cell.textLabel.text = statue.text;
-    cell.detailTextLabel.text = statue.screen_name;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:statue.thumbnail_pic]];
-    
+    cell.statue = statue;
+
     return cell;
  }
 

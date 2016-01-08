@@ -18,9 +18,10 @@
 #define APPSECRET                         @"b8d6e31776659e3a48487d1cb9235b67"
 #define BASE_URL                          @"https://api.weibo.com"
 #define REDIRECT_URl                      @"http://www.baidu.com"
+
+
+
 #define ACCESS_TOKENURL                    @"https://api.weibo.com/oauth2/access_token"
-
-
 #define AUTHORIZE_URL [BASE_URL stringByAppendingPathComponent:@"oauth2/authorize"]
 
 
