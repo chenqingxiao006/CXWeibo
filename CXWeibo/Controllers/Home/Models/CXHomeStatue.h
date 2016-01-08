@@ -21,21 +21,27 @@
 @property (copy, nonatomic) NSString *screen_name;
 
 /**
- *  内容
+ *  微博正文
  */
 @property (copy, nonatomic) NSString *text;
 
 
 /**
  *  图片数组
+ 每一组的格式为：http://ww4.sinaimg.cn/thumbnail/006gWxLWjw1ezs1gv1hrhj30j60f8q4g.jpg
  */
 @property (strong, nonatomic) NSArray *pic_urls;
+
+
 
 /**
  *  图片
  */
 @property (copy, nonatomic) NSString *thumbnail_pic;
 
+/**
+ *  初始化方法
+ */
 - (instancetype)initWithDic:(NSDictionary *)dic;
 
 @end

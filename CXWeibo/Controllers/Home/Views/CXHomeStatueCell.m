@@ -8,12 +8,14 @@
 
 #import "CXHomeStatueCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "CXStatuePicView.h"
 
 @interface CXHomeStatueCell ()
 
 @property (strong, nonatomic)  UIImageView *profile_image_url_imageView;
 @property (strong, nonatomic)  UILabel *screen_name_label;
 @property (strong, nonatomic)  UILabel *text_label;
+@property (strong, nonatomic)  CXStatuePicView *picView;
 
 @end
 
@@ -27,6 +29,7 @@
         [self addSubview:self.profile_image_url_imageView];
         [self addSubview:self.screen_name_label];
         [self addSubview:self.text_label];
+        
     }
     return self;
 }
@@ -50,8 +53,19 @@
     self.text_label.x = self.screen_name_label.x;    
     self.text_label.y = self.screen_name_label.maxY + 20;
     
-    self.height = self.screen_name_label.height + self.text_label.height + 40;
+    
+    
+    
+    self.picView = [[CXStatuePicView alloc] initWithPic_urls:_statue.pic_urls];
+    
+
+    self.picView.origin = CGPointMake(self.screen_name_label.x, self.text_label.maxY + 20);
+    [self addSubview:self.picView];
+    
+    
+    self.height = self.screen_name_label.height + self.text_label.height + 40 + self.picView.height + 20;
 }
+
 
 - (UIImageView *)profile_image_url_imageView{
     if (!_profile_image_url_imageView) {

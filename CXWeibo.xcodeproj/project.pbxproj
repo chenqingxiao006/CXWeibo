@@ -26,6 +26,7 @@
 		955375071C204841004C933D /* CXMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375061C204841004C933D /* CXMessageViewController.m */; };
 		9553750A1C20488B004C933D /* CXPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375091C20488B004C933D /* CXPersonalViewController.m */; };
 		9553750D1C2048B9004C933D /* CXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9553750C1C2048B9004C933D /* CXSearchViewController.m */; };
+		957D46881C3F9715009639A9 /* CXStatuePicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957D46871C3F9715009639A9 /* CXStatuePicView.m */; };
 		959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 959712351C20FFF5000AF631 /* UIView+Extension.m */; };
 		DD9AD0D61C3D30DE0008A5E2 /* CXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9AD0D31C3D30DE0008A5E2 /* CXLoginViewController.m */; };
 		DD9AD0D71C3D30DE0008A5E2 /* CXOauthController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9AD0D51C3D30DE0008A5E2 /* CXOauthController.m */; };
@@ -95,6 +96,8 @@
 		955375091C20488B004C933D /* CXPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXPersonalViewController.m; sourceTree = "<group>"; };
 		9553750B1C2048B9004C933D /* CXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSearchViewController.h; sourceTree = "<group>"; };
 		9553750C1C2048B9004C933D /* CXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchViewController.m; sourceTree = "<group>"; };
+		957D46861C3F9715009639A9 /* CXStatuePicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXStatuePicView.h; sourceTree = "<group>"; };
+		957D46871C3F9715009639A9 /* CXStatuePicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXStatuePicView.m; sourceTree = "<group>"; };
 		959712341C20FFF5000AF631 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		959712351C20FFF5000AF631 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		B7428FA0EF650175DEC9AEC6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +240,8 @@
 			children = (
 				95466E7A1C3F59B800A53E2E /* CXHomeStatueCell.h */,
 				95466E7B1C3F59B800A53E2E /* CXHomeStatueCell.m */,
+				957D46861C3F9715009639A9 /* CXStatuePicView.h */,
+				957D46871C3F9715009639A9 /* CXStatuePicView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				DDB204701C3E5BB600107B51 /* CXUserManager.m in Sources */,
 				9537A6701C1FEA8F006EEF33 /* main.m in Sources */,
 				95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */,
+				957D46881C3F9715009639A9 /* CXStatuePicView.m in Sources */,
 				DDB204651C3E5B2B00107B51 /* CXHomeViewController.m in Sources */,
 				95226E861C216BF0006DC853 /* CXAccount.m in Sources */,
 				9553750D1C2048B9004C933D /* CXSearchViewController.m in Sources */,
