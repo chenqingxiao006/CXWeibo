@@ -11,9 +11,9 @@
 #import "CXNetManager.h"
 #import "CXProgressHUD.h"
 #import "CXHomeViewController.h"
-
+#import "AFHTTPRequestOperationManager.h"
 @interface CXPostWeiboViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
+@property (strong,nonatomic) NSMutableArray* imgSelected;
 /** 发送按钮 */
 @property (strong, nonatomic) UIButton *postBtn;
 
@@ -29,20 +29,20 @@
 /** 相册按钮 */
 @property (strong, nonatomic) UIButton *albumBtn;
 
-
+@property(strong,nonatomic) UIView* imgView;
 @end
 
 @implementation CXPostWeiboViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.imgSelected= [NSMutableArray array];
     self.title = @"发布微博";
     [self creatUI];
 }
 //test comit
 - (void)creatUI{
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     // 取消按钮
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -73,12 +73,17 @@
     [self.textView becomeFirstResponder];
     
     [self.view addSubview:self.toolBarView];
-    
+    //居左 10 居工具栏上10 高度40 宽度200
+    CGRect rect=CGRectMake(10, self.toolBarView.frame.origin.y-50, 200, 40);
+    self.imgView=[[UIView alloc] initWithFrame:rect];
+    self.imgView.backgroundColor=[UIColor yellowColor];
+    [self.view addSubview:self.imgView];
     // 键盘通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
 
 }
+
 
 #pragma mark - event
 
@@ -102,7 +107,18 @@
     imagePickerController.allowsEditing = YES;
     [self presentViewController:imagePickerController animated:YES completion:^{}];
 }
-
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    UIImage * img=info[@"UIImagePickerControllerOriginalImage"];
+  
+    UIImageView * imgv= [[UIImageView alloc] initWithImage:img];
+    imgv.frame=CGRectMake([self.imgSelected count]*50, 0, 40, 40);
+    [self.imgView addSubview:imgv];
+    [self.imgSelected addObject:img];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"fuck ");
+    }];
+}
 - (void)postWeiboWithText:(NSString *)text{
     
     if (text.length > 0) {
@@ -113,8 +129,28 @@
                                  @"feature":@1,
                                  @"status":text
                                  };
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        // 让AFN支持@"text/plain" 和 application/json
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+        //搞不定 zx
+//        [manager
+//         POST:@"https://api.weibo.com/2/statuses/update.json"
+//         parameters:params
+//         constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
+//        {
+//            [formData  appendPartWithFormData:UIImageJPEGRepresentation((UIImage*)self.imgSelected[0], 0.001)  name:@"pic"];
+//        }
+//         success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject)
+//        {
+//            NSLog(@" ok ");
+//        }
+//         failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error)
+//        {
+//            NSLog(@"error %@",error);
+//        }];
         
         [CXNetManager postWithUrl:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObject) {
+
             NSLog(@"%@",responseObject);
             [CXProgressHUD showMessage:@"发送成功" durationTime:1.2 completionBlock:^{
                 [self dismissPostWeiboViewController];
@@ -170,6 +206,9 @@
         } else {
             self.toolBarView.y = keyboardF.origin.y - self.toolBarView.height;
         }
+        //调整图片选择区域的位置
+        CGRect rect=CGRectMake(10, self.toolBarView.frame.origin.y-50, 200, 40);
+        self.imgView.frame=rect;
     }];
 }
 
@@ -195,7 +234,7 @@
         
         self.automaticallyAdjustsScrollViewInsets = NO;// 光标位于左上角
         _textView.font = [UIFont systemFontOfSize:15];
-        _textView.backgroundColor = [UIColor purpleColor];
+        _textView.backgroundColor = [UIColor whiteColor];
         _textView.delegate = self;
         
     }

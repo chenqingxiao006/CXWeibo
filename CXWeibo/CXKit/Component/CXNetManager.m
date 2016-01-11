@@ -56,7 +56,6 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     // 让AFN支持@"text/plain" 和 application/json
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         if (success) {
