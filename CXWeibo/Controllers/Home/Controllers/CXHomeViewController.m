@@ -16,6 +16,8 @@
 #import "CXHomeStatue.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "CXHomeStatueCell.h"
+#import "CXPostWeiboViewController.h"
+#import "CXNavigationController.h"
 
 @interface CXHomeViewController ()
 
@@ -27,6 +29,16 @@
     self.title = @"首页";
     self.ifAddPullToRefreshControl = YES;
     [super viewDidLoad];
+    [self creatUI];
+}
+
+- (void)creatUI{
+    // 添加发布微博按钮
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(postWeibo)];
+    
+    self.navigationItem.rightBarButtonItems = @[btn];
+    
+    
 }
 
 #pragma mark - 继承父类
@@ -56,6 +68,18 @@
     
 }
 
+#pragma mark - events
+
+- (void)postWeibo{
+    
+    CXPostWeiboViewController *postVC = [[CXPostWeiboViewController alloc] init];
+    CXNavigationController *nav = [[CXNavigationController alloc] initWithRootViewController:postVC];
+    [self.navigationController presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -81,7 +105,7 @@
     
 //    statue.created_at
     NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setDateFormat:@"EEE-MMM-dd HH:mm:ss yyyy"];
+    [inputFormatter setDateFormat:@"EEE MMM d HH:mm:ss zzzz yyyy"];
     NSDate *date = [inputFormatter dateFromString:statue.created_at];
     
     NSLog(@"%@",date);

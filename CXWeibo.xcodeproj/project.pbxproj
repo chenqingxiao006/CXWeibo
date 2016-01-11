@@ -20,6 +20,7 @@
 		9537A6941C1FEA8F006EEF33 /* CXWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6931C1FEA8F006EEF33 /* CXWeiboUITests.m */; };
 		953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F21F01C3267C000D50649 /* CXBaseGradientView.m */; };
 		95466E7D1C3F59B800A53E2E /* CXHomeStatueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95466E7B1C3F59B800A53E2E /* CXHomeStatueCell.m */; };
+		95482BBA1C437C97007348A7 /* CXPostWeiboViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95482BB91C437C97007348A7 /* CXPostWeiboViewController.m */; };
 		955374EE1C2006E2004C933D /* CXTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374ED1C2006E2004C933D /* CXTabBarViewController.m */; };
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
 		955375011C2047DB004C933D /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375001C2047DB004C933D /* CXBaseViewController.m */; };
@@ -83,6 +84,8 @@
 		953F21F01C3267C000D50649 /* CXBaseGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseGradientView.m; sourceTree = "<group>"; };
 		95466E7A1C3F59B800A53E2E /* CXHomeStatueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXHomeStatueCell.h; sourceTree = "<group>"; };
 		95466E7B1C3F59B800A53E2E /* CXHomeStatueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXHomeStatueCell.m; sourceTree = "<group>"; };
+		95482BB81C437C97007348A7 /* CXPostWeiboViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXPostWeiboViewController.h; sourceTree = "<group>"; };
+		95482BB91C437C97007348A7 /* CXPostWeiboViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXPostWeiboViewController.m; sourceTree = "<group>"; };
 		955374EC1C2006E2004C933D /* CXTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CXTabBarViewController.h; path = ../../CXTabBarViewController.h; sourceTree = "<group>"; };
 		955374ED1C2006E2004C933D /* CXTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CXTabBarViewController.m; path = ../../CXTabBarViewController.m; sourceTree = "<group>"; };
 		955374EF1C200B39004C933D /* CXWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CXWeibo-Prefix.pch"; sourceTree = "<group>"; };
@@ -395,6 +398,8 @@
 			children = (
 				DDB204631C3E5B2B00107B51 /* CXHomeViewController.h */,
 				DDB204641C3E5B2B00107B51 /* CXHomeViewController.m */,
+				95482BB81C437C97007348A7 /* CXPostWeiboViewController.h */,
+				95482BB91C437C97007348A7 /* CXPostWeiboViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				DD9AD0DB1C3D31080008A5E2 /* CXAccountTool.m in Sources */,
 				DDB204751C3E5BD000107B51 /* CXHomeStatue.m in Sources */,
 				959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */,
+				95482BBA1C437C97007348A7 /* CXPostWeiboViewController.m in Sources */,
 				953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */,
 				955374FE1C203C21004C933D /* CXNavigationController.m in Sources */,
 				95466E7D1C3F59B800A53E2E /* CXHomeStatueCell.m in Sources */,
