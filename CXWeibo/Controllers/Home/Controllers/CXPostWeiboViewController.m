@@ -14,6 +14,7 @@
 
 @interface CXPostWeiboViewController ()<UITextViewDelegate>
 
+/** 发送按钮 */
 @property (strong, nonatomic) UIButton *postBtn;
 
 /** 内容框 */
@@ -21,6 +22,14 @@
 
 /** 下方工具条 */
 @property (strong, nonatomic) UIView *toolBarView;
+
+/** 相机按钮 */
+@property (strong, nonatomic) UIButton *cameraBtn;
+
+/** 相册按钮 */
+@property (strong, nonatomic) UIButton *albumBtn;
+
+
 @end
 
 @implementation CXPostWeiboViewController
@@ -179,9 +188,24 @@
         _toolBarView = [[UIView alloc] init];
         _toolBarView.frame = CGRectMake(0, SCREENHEIGHT - 49, SCREENWIDTH, 49);
         _toolBarView.backgroundColor = [UIColor yellowColor];
+        [_toolBarView addSubview:self.cameraBtn];
+        [_toolBarView addSubview:self.albumBtn];
     }
     return _toolBarView;
 }
 
+- (UIButton *)cameraBtn{
+    if(!_cameraBtn){
+        
+    }
+    return _cameraBtn;
+}
+
+- (UIButton *)albumBtn{
+    if(!_albumBtn){
+        
+    }
+    return _albumBtn;
+}
 
 @end
