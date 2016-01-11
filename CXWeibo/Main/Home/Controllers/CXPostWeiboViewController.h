@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^RefreshHomeBlock)();
 
 @interface CXPostWeiboViewController : UIViewController
-
+@property (copy, nonatomic) RefreshHomeBlock refreshHomeBlock;
 @end

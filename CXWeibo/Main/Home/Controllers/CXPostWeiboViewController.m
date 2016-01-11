@@ -12,7 +12,7 @@
 #import "CXProgressHUD.h"
 #import "CXHomeViewController.h"
 
-@interface CXPostWeiboViewController ()<UITextViewDelegate>
+@interface CXPostWeiboViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 /** 发送按钮 */
 @property (strong, nonatomic) UIButton *postBtn;
@@ -88,6 +88,21 @@
     }
 }
 
+- (void)postWeiboWithPics{
+    
+    
+    // 判断是否能访问相册
+//    if ([self isSourceTypeAvailable]) {
+//        
+//    }
+    
+    
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+    imagePickerController.delegate = self;
+    imagePickerController.allowsEditing = YES;
+    [self presentViewController:imagePickerController animated:YES completion:^{}];
+}
+
 - (void)postWeiboWithText:(NSString *)text{
     
     if (text.length > 0) {
@@ -103,6 +118,10 @@
             NSLog(@"%@",responseObject);
             [CXProgressHUD showMessage:@"发送成功" durationTime:1.2 completionBlock:^{
                 [self dismissPostWeiboViewController];
+                
+                if (self.refreshHomeBlock) {
+                    self.refreshHomeBlock();
+                }
                 
             } inView:self.view];
             
@@ -175,7 +194,7 @@
         _textView.frame = CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT - 64 - 49);
         
         self.automaticallyAdjustsScrollViewInsets = NO;// 光标位于左上角
-        
+        _textView.font = [UIFont systemFontOfSize:15];
         _textView.backgroundColor = [UIColor purpleColor];
         _textView.delegate = self;
         
@@ -203,7 +222,11 @@
 
 - (UIButton *)albumBtn{
     if(!_albumBtn){
-        
+        _albumBtn = [[UIButton alloc] init];
+        [_albumBtn setImage:[UIImage imageNamed:@"cx_add_picture"] forState:(UIControlStateNormal)];
+        [_albumBtn sizeToFit];
+        [_albumBtn addTarget:self action:@selector(postWeiboWithPics) forControlEvents:(UIControlEventTouchUpInside)];
+        _albumBtn.origin = CGPointMake(13.5, 13.5);
     }
     return _albumBtn;
 }

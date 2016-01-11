@@ -73,6 +73,11 @@
 - (void)postWeibo{
     
     CXPostWeiboViewController *postVC = [[CXPostWeiboViewController alloc] init];
+    __weak typeof(self) weakSelf = self;
+    postVC.refreshHomeBlock = ^{
+        [weakSelf loadNewer];
+    };
+    
     CXNavigationController *nav = [[CXNavigationController alloc] initWithRootViewController:postVC];
     [self.navigationController presentViewController:nav animated:YES completion:^{
         
