@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.title = @"发布微博";
+    self.title = @"发布微博";
     [self creatUI];
 }
 
@@ -64,6 +64,11 @@
     [self.textView becomeFirstResponder];
     
     [self.view addSubview:self.toolBarView];
+    
+    // 键盘通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+
 }
 
 #pragma mark - event
@@ -113,6 +118,33 @@
     }];
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+#pragma mark - 键盘相关
+
+- (void)keyboardWillChangeFrame:(NSNotification *)notification{
+    NSDictionary *userInfo = notification.userInfo;
+    
+    // 动画的持续时间
+    double duration = [userInfo [UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 键盘的frame
+    CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    // 执行动画
+    [UIView animateWithDuration:duration animations:^{
+        // 工具条的Y值 == 键盘的Y值 - 工具条的高度
+        if (keyboardF.origin.y > self.view.height) { // 键盘的Y值已经远远超过了控制器view的高度
+            self.toolBarView.y = self.view.height - self.toolBarView.height;//这里的<span style="background-color: rgb(240, 240, 240);">self.toolbar就是我的输入框。</span>
+            
+        } else {
+            self.toolBarView.y = keyboardF.origin.y - self.toolBarView.height;
+        }
+    }];
+}
+
 #pragma mark - UITextViewDelegate
 - (void)textViewDidChange:(UITextView *)textView{
     if (textView.text.length > 0 && textView.text.length < 140) {
@@ -124,7 +156,6 @@
         [self.postBtn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
 
     }
-
 }
 
 #pragma mark - getter and setter
