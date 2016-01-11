@@ -88,7 +88,7 @@
         [CXNetManager postWithUrl:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObject) {
             NSLog(@"%@",responseObject);
             [CXProgressHUD showMessage:@"发送成功" durationTime:1.2 completionBlock:^{
-             
+                [self dismissPostWeiboViewController];
                 
             } inView:self.view];
             
