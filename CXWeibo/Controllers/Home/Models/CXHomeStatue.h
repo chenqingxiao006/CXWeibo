@@ -32,10 +32,13 @@
  */
 @property (strong, nonatomic) NSArray *pic_urls;
 
-
+/**
+ *  发布时间
+ */
+@property (copy, nonatomic) NSString *created_at;
 
 /**
- *  图片
+ *  用户头像
  */
 @property (copy, nonatomic) NSString *thumbnail_pic;
 

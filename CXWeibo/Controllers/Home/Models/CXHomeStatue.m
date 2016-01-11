@@ -20,6 +20,8 @@
         self.text = [dic valueForKey:@"text"];
         self.thumbnail_pic = [dic valueForKey:@"thumbnail_pic"];
         self.pic_urls = [dic valueForKey:@"pic_urls"];
+        self.created_at = [dic valueForKey:@"created_at"];
+
     }
     return self;
 }
