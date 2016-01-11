@@ -55,11 +55,7 @@
                 CXHomeModel *homeModel = [[CXHomeModel alloc] initWithDic:responseObject];
 
         self.listData = homeModel.homeStatuses;
-        CXHomeStatue *statue = self.listData[0];
-        
-        NSLog(@"%@",statue);
-        
-        
+
         [self.tableView reloadData];
         
     } failed:^(NSError *error) {
@@ -105,16 +101,7 @@
     }
     CXHomeStatue *statue = self.listData[indexPath.row];
     cell.statue = statue;
-    // Mon Jan 11 11:30:36 +0800 2016
-//  yyyy-MM-dd'T'HH:mm:ssZ
-    
-//    statue.created_at
-    NSDateFormatter *inputFormatter = [[NSDateFormatter alloc] init];
-    [inputFormatter setDateFormat:@"EEE MMM d HH:mm:ss zzzz yyyy"];
-    NSDate *date = [inputFormatter dateFromString:statue.created_at];
-    
-    NSLog(@"%@",date);
-    
+
     return cell;
  }
 

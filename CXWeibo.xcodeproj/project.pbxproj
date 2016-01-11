@@ -26,6 +26,7 @@
 		952106D41C43B4740084CAF3 /* CXPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952106C31C43B4740084CAF3 /* CXPersonalViewController.m */; };
 		952106D51C43B4740084CAF3 /* CXSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952106C61C43B4740084CAF3 /* CXSearchViewController.m */; };
 		952106D91C43C60C0084CAF3 /* cx_add_picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 952106D81C43C60C0084CAF3 /* cx_add_picture@2x.png */; };
+		952106DC1C43DA890084CAF3 /* NSDate+loaclDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 952106DB1C43DA890084CAF3 /* NSDate+loaclDate.m */; };
 		95226E791C21514D006DC853 /* CXProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 95226E781C21514D006DC853 /* CXProgressHUD.m */; };
 		95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95226E7B1C2157A1006DC853 /* CXNetManager.m */; };
 		9537A6701C1FEA8F006EEF33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A66F1C1FEA8F006EEF33 /* main.m */; };
@@ -95,6 +96,8 @@
 		952106C51C43B4740084CAF3 /* CXSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXSearchViewController.h; sourceTree = "<group>"; };
 		952106C61C43B4740084CAF3 /* CXSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXSearchViewController.m; sourceTree = "<group>"; };
 		952106D81C43C60C0084CAF3 /* cx_add_picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cx_add_picture@2x.png"; sourceTree = "<group>"; };
+		952106DA1C43DA890084CAF3 /* NSDate+loaclDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+loaclDate.h"; sourceTree = "<group>"; };
+		952106DB1C43DA890084CAF3 /* NSDate+loaclDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+loaclDate.m"; sourceTree = "<group>"; };
 		95226E771C21514D006DC853 /* CXProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXProgressHUD.h; sourceTree = "<group>"; };
 		95226E781C21514D006DC853 /* CXProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXProgressHUD.m; sourceTree = "<group>"; };
 		95226E7A1C2157A1006DC853 /* CXNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNetManager.h; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				955374F21C2013F7004C933D /* Controllers */,
 				955374F31C2013F7004C933D /* Networking */,
 				955374F41C2013F7004C933D /* Views */,
+				952106DA1C43DA890084CAF3 /* NSDate+loaclDate.h */,
+				952106DB1C43DA890084CAF3 /* NSDate+loaclDate.m */,
 			);
 			path = CXKit;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 				9537A6701C1FEA8F006EEF33 /* main.m in Sources */,
 				952106CD1C43B4740084CAF3 /* CXHomeStatueCell.m in Sources */,
 				95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */,
+				952106DC1C43DA890084CAF3 /* NSDate+loaclDate.m in Sources */,
 				952106CC1C43B4740084CAF3 /* CXUserManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
