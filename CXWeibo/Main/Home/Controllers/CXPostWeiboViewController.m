@@ -40,7 +40,7 @@
     self.title = @"发布微博";
     [self creatUI];
 }
-
+//test comit
 - (void)creatUI{
     self.view.backgroundColor = [UIColor orangeColor];
     
