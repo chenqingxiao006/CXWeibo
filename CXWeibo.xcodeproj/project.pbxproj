@@ -168,6 +168,7 @@
 		9521069B1C43B4740084CAF3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				952106D61C43BF0A0084CAF3 /* Resources */,
 				9521069C1C43B4740084CAF3 /* Home */,
 				952106B11C43B4740084CAF3 /* Message */,
 				952106B41C43B4740084CAF3 /* Oauth */,
@@ -304,6 +305,21 @@
 				952106C61C43B4740084CAF3 /* CXSearchViewController.m */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		952106D61C43BF0A0084CAF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				952106D71C43BF0A0084CAF3 /* ToolBar */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		952106D71C43BF0A0084CAF3 /* ToolBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ToolBar;
 			sourceTree = "<group>";
 		};
 		9537A6621C1FEA8F006EEF33 = {
