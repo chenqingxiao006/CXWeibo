@@ -150,8 +150,15 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
-#pragma mark - 键盘相关
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0){
+    
+    NSLog(@"%@",image);
+    
+    
+}
 
+#pragma mark - 键盘相关
 - (void)keyboardWillChangeFrame:(NSNotification *)notification{
     NSDictionary *userInfo = notification.userInfo;
     

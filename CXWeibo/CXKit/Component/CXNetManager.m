@@ -30,7 +30,8 @@
     // 1.获得manager
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     // 让AFN支持@"text/plain" 和 application/json
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",@"text/plain"]];
+    
 
     [manager GET:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
        
@@ -55,8 +56,9 @@
 + (void)postWithUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure{
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     // 让AFN支持@"text/plain" 和 application/json
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
 
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",@"text/plain"]];
+    
     [manager POST:url parameters:params success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         
         if (success) {
