@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4A1F06F618EE33C4652F49F2'
-               BlueprintName = 'MBProgressHUD'
+               BlueprintIdentifier = 'FBAA0C2DCA9A360355F6D9B8'
+               BlueprintName = 'ZYQAssetPickerController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libMBProgressHUD.a'>
+               BuildableName = 'libZYQAssetPickerController.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

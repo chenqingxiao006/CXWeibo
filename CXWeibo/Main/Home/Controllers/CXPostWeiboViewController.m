@@ -151,11 +151,23 @@
 }
 
 #pragma mark - UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0){
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    if (image) {
+//        [self.imageArray addObject:image];
+//        [_picCollectionView reloadData];
+    }
     NSLog(@"%@",image);
-    
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 #pragma mark - 键盘相关
