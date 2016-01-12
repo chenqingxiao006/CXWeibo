@@ -29,6 +29,7 @@
 /** 相册按钮 */
 @property (strong, nonatomic) UIButton *albumBtn;
 
+@property (strong, nonatomic) UIImage *postImage;
 
 @end
 
@@ -88,19 +89,36 @@
     }
 }
 
+/** 进入相册 */
 - (void)postWeiboWithPics{
-    
-    
-    // 判断是否能访问相册
-//    if ([self isSourceTypeAvailable]) {
-//        
-//    }
-    
-    
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.allowsEditing = YES;
     [self presentViewController:imagePickerController animated:YES completion:^{}];
+}
+
+- (void)postWeiboWithPics:(UIImage *)image text:(NSString *)text{
+
+    NSData *imageDate = UIImagePNGRepresentation(image);
+    //     [self setValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    
+    CXAccount *account = [CXAccountTool shareAccountTool].account;
+    NSDictionary *params = @{
+                             @"access_token" : account.access_token,
+                             @"uid" :account.uid,
+                             @"feature":@1,
+                             @"status":text,
+                             @"pic":imageDate
+                             };
+    
+    
+    
+    [CXNetManager postWithUrl:@"https://upload.api.weibo.com/2/statuses/upload.json" params:params success:^(id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 - (void)postWeiboWithText:(NSString *)text{
@@ -157,8 +175,10 @@
     UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     
     if (image) {
-//        [self.imageArray addObject:image];
-//        [_picCollectionView reloadData];
+        self.postImage = image;
+        // 上传图片并且发微博
+        [self postWeiboWithPics:image text:self.textView.text];
+        
     }
     NSLog(@"%@",image);
     [self dismissViewControllerAnimated:YES completion:nil];
