@@ -26,7 +26,6 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - ZYQAssetPickerController (1.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -34,7 +33,6 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - SDWebImage (~> 3.7)
-  - ZYQAssetPickerController (~> 1.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -42,6 +40,5 @@ SPEC CHECKSUMS:
   MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
   MJRefresh: 887c9ee5ff155533d7d9c20098bebb7b847b2fcb
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  ZYQAssetPickerController: e5cf51ee6c05fa06746830026c247cb9f6699e84
 
 COCOAPODS: 0.39.0
