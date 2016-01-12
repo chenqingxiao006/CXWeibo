@@ -59,7 +59,7 @@
         [self.tableView reloadData];
         
     } failed:^(NSError *error) {
-        
+        NSLog(@"%@",error);
     } showLodingView:YES];
     
 }

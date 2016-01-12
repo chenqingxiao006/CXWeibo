@@ -119,6 +119,21 @@
         NSLog(@"fuck ");
     }];
 }
+- (void)addPostFormData:(NSString *)str params:(NSDictionary *)params stringBoundary:(NSString *)stringBoundary postBody:(NSMutableData *)postBody {
+    NSData * p1= [[NSString stringWithFormat:@"Content-Disposition:form-data;name=\"%@\"\r\n",str]dataUsingEncoding:NSUTF8StringEncoding];
+    NSData * data=[[NSString stringWithFormat:@"%@",[ params objectForKey:str ]] dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* bodyBoundry = [[NSString stringWithFormat:@"\r\n%@\r\n", stringBoundary ] dataUsingEncoding:NSUTF8StringEncoding];
+    [postBody appendData: p1];
+    [postBody appendData:data];
+    [postBody appendData:bodyBoundry];
+}
+- (void)addPostWithData:(NSString *)str data:(NSData *)body stringBoundary:(NSString *)stringBoundary postBody:(NSMutableData *)postBody {
+    NSData * p1= [[NSString stringWithFormat:@"Content-Disposition:form-data;name=\"%@\"\r\n",str]dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* bodyBoundry = [[NSString stringWithFormat:@"\r\n%@\r\n", stringBoundary ] dataUsingEncoding:NSUTF8StringEncoding];
+    [postBody appendData: p1];
+    [postBody appendData:body];
+    [postBody appendData:bodyBoundry];
+}
 - (void)postWeiboWithText:(NSString *)text{
     
     if (text.length > 0) {
@@ -149,25 +164,53 @@
 //            NSLog(@"error %@",error);
 //        }];
         
-        [CXNetManager postWithUrl:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObject) {
-
-            NSLog(@"%@",responseObject);
-            [CXProgressHUD showMessage:@"发送成功" durationTime:1.2 completionBlock:^{
-                [self dismissPostWeiboViewController];
-                
-                if (self.refreshHomeBlock) {
-                    self.refreshHomeBlock();
-                }
-                
-            } inView:self.view];
-            
-            
-        } failure:^(NSError *error) {
-            NSLog(@"%@",error);
-            [CXProgressHUD showMessage:@"发送失败" durationTime:1.2 completionBlock:^{
-                
-            } inView:self.view];
-        }];
+        //*******************   set content-type mutipart/form-data     *******************//
+        
+        NSMutableURLRequest * req=[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.weibo.com/2/statuses/update.json"]];
+        NSString * stringBoundary= [NSString stringWithFormat:@"0xKhTmLbOuNdArY"];
+        NSString * contentType=[NSString stringWithFormat:@"multipart/form-data;boundry=%@", stringBoundary ];
+        [req addValue:@"Content-Type" forHTTPHeaderField:contentType];
+        
+        //*******************   append post formdata body               *******************//
+        
+        NSMutableData * postBody =[[NSMutableData alloc] init];
+        NSEnumerator * en= [params keyEnumerator];
+        for ( NSString*  str in en) {
+            [self addPostFormData:str params:params stringBoundary:stringBoundary postBody:postBody];
+        }
+        NSData * imgData=UIImageJPEGRepresentation(self.imgSelected[0], 0.1);
+        NSLog(@"img data length %d",imgData.length);
+        [self addPostWithData:@"pic" data:imgData stringBoundary:stringBoundary postBody:postBody];
+        [req setHTTPBody:postBody];
+        
+        //*******************    send post request                      *******************//
+        
+        NSData * respData=  [NSURLConnection sendSynchronousRequest:req returningResponse:nil error:nil];
+        NSLog(@"%@",respData);
+        
+        //*******************   return request entity is too large      *******************//
+        
+        NSLog(@"%@",[[NSString alloc] initWithData:respData encoding:NSUTF8StringEncoding]);
+        
+//        [CXNetManager postWithUrl:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObject) {
+//
+//            NSLog(@"%@",responseObject);
+//            [CXProgressHUD showMessage:@"发送成功" durationTime:1.2 completionBlock:^{
+//                [self dismissPostWeiboViewController];
+//                
+//                if (self.refreshHomeBlock) {
+//                    self.refreshHomeBlock();
+//                }
+//                
+//            } inView:self.view];
+//            
+//            
+//        } failure:^(NSError *error) {
+//            NSLog(@"%@",error);
+//            [CXProgressHUD showMessage:@"发送失败" durationTime:1.2 completionBlock:^{
+//                
+//            } inView:self.view];
+//        }];
     }else{
         [CXProgressHUD showMessage:@"文字不能为空" durationTime:1.2 completionBlock:^{
             
