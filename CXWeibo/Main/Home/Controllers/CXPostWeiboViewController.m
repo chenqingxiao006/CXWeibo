@@ -12,6 +12,7 @@
 #import "CXProgressHUD.h"
 #import "CXHomeViewController.h"
 #import "AFHTTPRequestOperationManager.h"
+#import "ZXImgPickViewController.h"
 @interface CXPostWeiboViewController ()<UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (strong,nonatomic) NSMutableArray* imgSelected;
 /** 发送按钮 */
@@ -44,7 +45,7 @@
 - (void)creatUI{
     self.view.backgroundColor = [UIColor whiteColor];
     
-    // 取消按钮
+    // 取消按钮
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelBtn setTitle:@"取消" forState:(UIControlStateNormal)];
     [cancelBtn sizeToFit];
@@ -100,12 +101,17 @@
 //    if ([self isSourceTypeAvailable]) {
 //        
 //    }
-    
-    
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    imagePickerController.delegate = self;
-    imagePickerController.allowsEditing = YES;
-    [self presentViewController:imagePickerController animated:YES completion:^{}];
+    ZXImgPickViewController * imgPickView= [[ZXImgPickViewController alloc] init];
+
+    UINavigationController * nav=[[UINavigationController alloc] initWithRootViewController:imgPickView];
+    [self.navigationController presentViewController:nav animated:YES completion:^{
+            [imgPickView getAllImagesGroup];
+//        [imgPickView loadInitialView];
+    }];
+//    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+//    imagePickerController.delegate = self;
+//    imagePickerController.allowsEditing = YES;
+//    [self presentViewController:imagePickerController animated:YES completion:^{}];
 }
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
@@ -128,7 +134,7 @@
     [postBody appendData:bodyBoundry];
 }
 - (void)addPostWithData:(NSString *)str data:(NSData *)body stringBoundary:(NSString *)stringBoundary postBody:(NSMutableData *)postBody {
-    NSData * p1= [[NSString stringWithFormat:@"Content-Disposition:form-data;name=\"%@\"\r\n",str]dataUsingEncoding:NSUTF8StringEncoding];
+    NSData * p1= [[NSString stringWithFormat:@"Content-Disposition:form-data;name=\"%@\";filename=\"%@.jpg\";\r\nContent-Type:image/jpeg\r\n",str,str]dataUsingEncoding:NSUTF8StringEncoding];
     NSData* bodyBoundry = [[NSString stringWithFormat:@"\r\n%@\r\n", stringBoundary ] dataUsingEncoding:NSUTF8StringEncoding];
     [postBody appendData: p1];
     [postBody appendData:body];
@@ -146,14 +152,16 @@
                                  };
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         // 让AFN支持@"text/plain" 和 application/json
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-        //搞不定 zx
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithArray:@[@"application/json",@"text/plain"]];
+        //搞不定 1.0
 //        [manager
 //         POST:@"https://api.weibo.com/2/statuses/update.json"
 //         parameters:params
 //         constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
 //        {
-//            [formData  appendPartWithFormData:UIImageJPEGRepresentation((UIImage*)self.imgSelected[0], 0.001)  name:@"pic"];
+//           [formData  appendPartWithFormData:UIImageJPEGRepresentation((UIImage*)self.imgSelected[0], 0.001)  name:@"pic"];
+//            //unsupported media type
+//            //[formData  appendPartWithFileData:UIImageJPEGRepresentation((UIImage*)self.imgSelected[0], 0.001) name:@"pic" fileName:@"123.jpg" mimeType:@"image/jpeg"];
 //        }
 //         success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject)
 //        {
@@ -164,6 +172,7 @@
 //            NSLog(@"error %@",error);
 //        }];
         
+        //搞不定 2.0
         //*******************   set content-type mutipart/form-data     *******************//
         
         NSMutableURLRequest * req=[[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.weibo.com/2/statuses/update.json"]];
@@ -179,7 +188,6 @@
             [self addPostFormData:str params:params stringBoundary:stringBoundary postBody:postBody];
         }
         NSData * imgData=UIImageJPEGRepresentation(self.imgSelected[0], 0.1);
-        NSLog(@"img data length %d",imgData.length);
         [self addPostWithData:@"pic" data:imgData stringBoundary:stringBoundary postBody:postBody];
         [req setHTTPBody:postBody];
         

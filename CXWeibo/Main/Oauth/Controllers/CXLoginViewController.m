@@ -143,7 +143,7 @@
             } inView:self.view];
             
         } failure:^(NSError *error) {
-            
+            NSLog(@"post auth2 error %@",error);
             account.userManager = nil;
         }];
         
