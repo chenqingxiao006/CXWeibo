@@ -20,28 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CXWeibo/Main/Home/Controllers/CXPostWeiboViewController.m"
-            timestampString = "474290494.897232"
+            timestampString = "474446485.577532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "-postWeiboWithPics:text:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CXWeibo/Main/Home/Controllers/CXPostWeiboViewController.m"
-            timestampString = "474290494.897232"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-postWeiboWithPics:text:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-creatUI"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

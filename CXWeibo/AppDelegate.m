@@ -10,8 +10,13 @@
 #import "CXTabBarViewController.h"
 #import "CXOauthController.h"
 #import "CXAccountTool.h"
+#import "CXPostWeiboViewController.h"
+#import "CXNavigationController.h"
+#import "CXHomeViewController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) CXTabBarViewController *tabVC;
 
 @end
 
@@ -19,6 +24,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   
+    
+    
     
     //1.创建Window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -30,6 +38,7 @@
         // 用户已经授权过
         CXTabBarViewController *tabBarVC = [[CXTabBarViewController alloc] init];
         self.window.rootViewController = tabBarVC;
+        self.tabVC = tabBarVC;
     }else{
         // 未授权加载授权页面
         CXOauthController *oauthVC = [[CXOauthController alloc] init];
@@ -42,7 +51,62 @@
     // 4.显示出来
     [self.window makeKeyAndVisible];
     
+    //0.添加3D Touch
+    UIApplicationShortcutIcon *firstItemIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
+    
+    UIMutableApplicationShortcutItem *lookWeiboItem = [[UIMutableApplicationShortcutItem alloc]initWithType:@"lookWeiboItem" localizedTitle:@"看微博" localizedSubtitle:nil icon:firstItemIcon userInfo:nil];
+    
+    UIApplicationShortcutIcon *secondItemIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
+    UIMutableApplicationShortcutItem *postWeiboItem = [[UIMutableApplicationShortcutItem alloc]initWithType:@"postWeibo" localizedTitle:@"发微博" localizedSubtitle:nil icon:secondItemIcon userInfo:nil];
+    
+    application.shortcutItems = @[lookWeiboItem,postWeiboItem];
+    
     return YES;
+}
+
+-(void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler{
+    
+    
+    
+    if ([shortcutItem.type isEqual:@"lookWeibo"]) {
+        
+//        NSLog(@"跳转到firstItem界面");
+//        
+//        firstItemView *first = [[firstItemView alloc]init];
+//        
+//        [nav pushViewController:first animated:YES];
+        
+    }else if([shortcutItem.type isEqual:@"postWeibo"]){
+        
+        
+        if([CXAccountTool shareAccountTool].account){
+            self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+            self.window.backgroundColor = [UIColor whiteColor];
+            // 用户已经授权过
+
+
+            
+            CXNavigationController *nav1 = self.tabVC.childViewControllers[0];
+            
+            CXPostWeiboViewController *postVC = [[CXPostWeiboViewController alloc] init];
+            
+            CXNavigationController *nav2 = [[CXNavigationController alloc] initWithRootViewController:postVC];
+            [nav1 presentViewController:nav2 animated:YES completion:^{
+                
+            }];
+
+            
+        }else{
+            // 未授权加载授权页面
+            CXOauthController *oauthVC = [[CXOauthController alloc] init];
+            self.window.rootViewController = oauthVC;
+        }
+        
+        
+        
+                                             
+                                             
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
