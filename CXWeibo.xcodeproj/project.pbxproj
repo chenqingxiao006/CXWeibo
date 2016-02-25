@@ -36,6 +36,13 @@
 		9537A6891C1FEA8F006EEF33 /* CXWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6881C1FEA8F006EEF33 /* CXWeiboTests.m */; };
 		9537A6941C1FEA8F006EEF33 /* CXWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6931C1FEA8F006EEF33 /* CXWeiboUITests.m */; };
 		953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F21F01C3267C000D50649 /* CXBaseGradientView.m */; };
+		954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22CA1C7EE9D6000AC0E9 /* CXImageView.m */; };
+		954D22D91C7EEB34000AC0E9 /* HZPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22CE1C7EEB34000AC0E9 /* HZPhotoBrowser.m */; };
+		954D22DA1C7EEB34000AC0E9 /* HZPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22D11C7EEB34000AC0E9 /* HZPhotoBrowserView.m */; };
+		954D22DB1C7EEB34000AC0E9 /* HZPhotoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22D31C7EEB34000AC0E9 /* HZPhotoGroup.m */; };
+		954D22DC1C7EEB34000AC0E9 /* HZPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22D51C7EEB34000AC0E9 /* HZPhotoItem.m */; };
+		954D22DD1C7EEB34000AC0E9 /* HZWaitingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22D71C7EEB34000AC0E9 /* HZWaitingView.m */; };
+		954D22DE1C7EEB34000AC0E9 /* whiteplaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 954D22D81C7EEB34000AC0E9 /* whiteplaceholder.png */; };
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
 		955375011C2047DB004C933D /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375001C2047DB004C933D /* CXBaseViewController.m */; };
 		959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 959712351C20FFF5000AF631 /* UIView+Extension.m */; };
@@ -117,6 +124,20 @@
 		9537A6951C1FEA8F006EEF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		953F21EF1C3267C000D50649 /* CXBaseGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXBaseGradientView.h; sourceTree = "<group>"; };
 		953F21F01C3267C000D50649 /* CXBaseGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseGradientView.m; sourceTree = "<group>"; };
+		954D22C91C7EE9D5000AC0E9 /* CXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXImageView.h; sourceTree = "<group>"; };
+		954D22CA1C7EE9D6000AC0E9 /* CXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXImageView.m; sourceTree = "<group>"; };
+		954D22CD1C7EEB34000AC0E9 /* HZPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowser.h; sourceTree = "<group>"; };
+		954D22CE1C7EEB34000AC0E9 /* HZPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowser.m; sourceTree = "<group>"; };
+		954D22CF1C7EEB34000AC0E9 /* HZPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		954D22D01C7EEB34000AC0E9 /* HZPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoBrowserView.h; sourceTree = "<group>"; };
+		954D22D11C7EEB34000AC0E9 /* HZPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoBrowserView.m; sourceTree = "<group>"; };
+		954D22D21C7EEB34000AC0E9 /* HZPhotoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoGroup.h; sourceTree = "<group>"; };
+		954D22D31C7EEB34000AC0E9 /* HZPhotoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoGroup.m; sourceTree = "<group>"; };
+		954D22D41C7EEB34000AC0E9 /* HZPhotoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZPhotoItem.h; sourceTree = "<group>"; };
+		954D22D51C7EEB34000AC0E9 /* HZPhotoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZPhotoItem.m; sourceTree = "<group>"; };
+		954D22D61C7EEB34000AC0E9 /* HZWaitingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZWaitingView.h; sourceTree = "<group>"; };
+		954D22D71C7EEB34000AC0E9 /* HZWaitingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZWaitingView.m; sourceTree = "<group>"; };
+		954D22D81C7EEB34000AC0E9 /* whiteplaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteplaceholder.png; sourceTree = "<group>"; };
 		955374EF1C200B39004C933D /* CXWeibo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CXWeibo-Prefix.pch"; sourceTree = "<group>"; };
 		955374FC1C203C21004C933D /* CXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXNavigationController.h; sourceTree = "<group>"; };
 		955374FD1C203C21004C933D /* CXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNavigationController.m; sourceTree = "<group>"; };
@@ -234,6 +255,8 @@
 				952106AE1C43B4740084CAF3 /* CXHomeStatueCell.m */,
 				952106AF1C43B4740084CAF3 /* CXStatuePicView.h */,
 				952106B01C43B4740084CAF3 /* CXStatuePicView.m */,
+				954D22C91C7EE9D5000AC0E9 /* CXImageView.h */,
+				954D22CA1C7EE9D6000AC0E9 /* CXImageView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +376,7 @@
 		9537A66D1C1FEA8F006EEF33 /* CXWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				954D22CC1C7EEB34000AC0E9 /* ptotoBrowser */,
 				9521069B1C43B4740084CAF3 /* Main */,
 				955374F01C2013F7004C933D /* CXKit */,
 				9537A6711C1FEA8F006EEF33 /* AppDelegate.h */,
@@ -390,6 +414,25 @@
 				9537A6951C1FEA8F006EEF33 /* Info.plist */,
 			);
 			path = CXWeiboUITests;
+			sourceTree = "<group>";
+		};
+		954D22CC1C7EEB34000AC0E9 /* ptotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				954D22CD1C7EEB34000AC0E9 /* HZPhotoBrowser.h */,
+				954D22CE1C7EEB34000AC0E9 /* HZPhotoBrowser.m */,
+				954D22CF1C7EEB34000AC0E9 /* HZPhotoBrowserConfig.h */,
+				954D22D01C7EEB34000AC0E9 /* HZPhotoBrowserView.h */,
+				954D22D11C7EEB34000AC0E9 /* HZPhotoBrowserView.m */,
+				954D22D21C7EEB34000AC0E9 /* HZPhotoGroup.h */,
+				954D22D31C7EEB34000AC0E9 /* HZPhotoGroup.m */,
+				954D22D41C7EEB34000AC0E9 /* HZPhotoItem.h */,
+				954D22D51C7EEB34000AC0E9 /* HZPhotoItem.m */,
+				954D22D61C7EEB34000AC0E9 /* HZWaitingView.h */,
+				954D22D71C7EEB34000AC0E9 /* HZWaitingView.m */,
+				954D22D81C7EEB34000AC0E9 /* whiteplaceholder.png */,
+			);
+			path = ptotoBrowser;
 			sourceTree = "<group>";
 		};
 		955374F01C2013F7004C933D /* CXKit */ = {
@@ -560,6 +603,7 @@
 				9537A67E1C1FEA8F006EEF33 /* LaunchScreen.storyboard in Resources */,
 				9537A67B1C1FEA8F006EEF33 /* Assets.xcassets in Resources */,
 				952106D91C43C60C0084CAF3 /* cx_add_picture@2x.png in Resources */,
+				954D22DE1C7EEB34000AC0E9 /* whiteplaceholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,10 +683,12 @@
 				952106C91C43B4740084CAF3 /* CXHomeModel.m in Sources */,
 				953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */,
 				955374FE1C203C21004C933D /* CXNavigationController.m in Sources */,
+				954D22DA1C7EEB34000AC0E9 /* HZPhotoBrowserView.m in Sources */,
 				955375011C2047DB004C933D /* CXBaseViewController.m in Sources */,
 				952106CF1C43B4740084CAF3 /* CXMessageViewController.m in Sources */,
 				95226E791C21514D006DC853 /* CXProgressHUD.m in Sources */,
 				952106D01C43B4740084CAF3 /* CXLoginViewController.m in Sources */,
+				954D22DB1C7EEB34000AC0E9 /* HZPhotoGroup.m in Sources */,
 				952106D41C43B4740084CAF3 /* CXPersonalViewController.m in Sources */,
 				952106D21C43B4740084CAF3 /* CXAccount.m in Sources */,
 				952106961C43B29E0084CAF3 /* CXTabBarViewController.m in Sources */,
@@ -651,11 +697,15 @@
 				952106C81C43B4740084CAF3 /* CXPostWeiboViewController.m in Sources */,
 				950CFF8A1C2288BD001FAC4E /* CXTabBar.m in Sources */,
 				952106D51C43B4740084CAF3 /* CXSearchViewController.m in Sources */,
+				954D22D91C7EEB34000AC0E9 /* HZPhotoBrowser.m in Sources */,
 				952106CA1C43B4740084CAF3 /* CXHomeStatue.m in Sources */,
 				952106CB1C43B4740084CAF3 /* CXStatusTools.m in Sources */,
 				9537A6701C1FEA8F006EEF33 /* main.m in Sources */,
 				952106CD1C43B4740084CAF3 /* CXHomeStatueCell.m in Sources */,
+				954D22DD1C7EEB34000AC0E9 /* HZWaitingView.m in Sources */,
+				954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */,
 				95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */,
+				954D22DC1C7EEB34000AC0E9 /* HZPhotoItem.m in Sources */,
 				952106DC1C43DA890084CAF3 /* NSDate+loaclDate.m in Sources */,
 				952106CC1C43B4740084CAF3 /* CXUserManager.m in Sources */,
 			);

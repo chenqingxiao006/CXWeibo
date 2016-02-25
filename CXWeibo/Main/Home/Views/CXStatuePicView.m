@@ -8,16 +8,16 @@
 
 #import "CXStatuePicView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "CXImageView.h"
 
 @implementation CXStatuePicView
 
 - (instancetype)initWithPic_urls:(NSArray *)pic_urls{
     if (self = [super init]) {
-        self.backgroundColor = [UIColor clearColor];
+//        self.backgroundColor = [UIColor clearColor];
 
         CGFloat imageWidth = (SCREENWIDTH - 75 - 50) / 3 ;
         self.width = SCREENWIDTH - 75;
-        
         
         if (pic_urls.count > 1) {
             // 九宫格布局
@@ -27,20 +27,14 @@
             self.height = imageWidth * rowNums;
             for (int i = 0; i < pic_urls.count; i++) {
                 
-                UIImageView *imageView = [[UIImageView alloc] init];
-                [self addSubview:imageView];
-                imageView.backgroundColor = [UIColor clearColor];
-                // 图片
-//                [imageView sd_setImageWithURL:[NSURL URLWithString:[pic_urls[i] valueForKey:@"thumbnail_pic"]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                    
-//                }];
+                CXImageView *imageView = [[CXImageView alloc] initWithImageUrls:pic_urls imageIndex:[NSNumber numberWithInt:i]];
                 
+                [self addSubview:imageView];
+//                imageView.backgroundColor = [UIColor clearColor];
+                // 图片
                 [imageView sd_setImageWithURL:[NSURL URLWithString:[pic_urls[i] valueForKey:@"thumbnail_pic"]] placeholderImage:nil options:SDWebImageCacheMemoryOnly completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     
                 }];
-                
-                
-                
                 
                 // 设置size
                 imageView.size = CGSizeMake(imageWidth, imageWidth);
@@ -51,9 +45,10 @@
             
         }else if(pic_urls.count == 1){
             // 单独一个图片
-            UIImageView *imageView = [[UIImageView alloc] init];
+            CXImageView *imageView = [[CXImageView alloc] initWithImageUrls:pic_urls imageIndex:[NSNumber numberWithInt:0]];
+            
             [self addSubview:imageView];
-            imageView.backgroundColor = [UIColor clearColor];
+//            imageView.backgroundColor = [UIColor clearColor];
             // 图片
             [imageView sd_setImageWithURL:[NSURL URLWithString:[pic_urls[0] valueForKey:@"thumbnail_pic"]] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 

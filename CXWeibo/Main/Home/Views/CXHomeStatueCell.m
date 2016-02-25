@@ -29,11 +29,9 @@
         [self addSubview:self.profile_image_url_imageView];
         [self addSubview:self.screen_name_label];
         [self addSubview:self.text_label];
-        
     }
     return self;
 }
-
 
 - (void)setStatue:(CXHomeStatue *)statue {
     _statue = statue;
