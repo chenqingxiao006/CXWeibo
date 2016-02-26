@@ -43,8 +43,15 @@
     HZPhotoGroup *group = [[HZPhotoGroup alloc] init];
 
     NSMutableArray *temp = [NSMutableArray array];
+    
+    NSMutableArray *imageArray = [NSMutableArray array];
+    for (NSDictionary *dict in self.imAgeUrls) {
+        NSString *str = [dict valueForKey:@"thumbnail_pic"];
+        [imageArray addObject:str];
+    }
+    
 
-    [self.imAgeUrls enumerateObjectsUsingBlock:^(NSString *src, NSUInteger idx, BOOL *stop) {
+    [imageArray enumerateObjectsUsingBlock:^(NSString *src, NSUInteger idx, BOOL *stop) {
         HZPhotoItem *item = [[HZPhotoItem alloc] init];
         item.thumbnail_pic = src;
         [temp addObject:item];
