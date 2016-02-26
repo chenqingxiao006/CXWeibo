@@ -28,18 +28,11 @@
         self.imAgeUrls = imageUrls;
         self.index = index;
         
-//        UITapGestureRecognizer *tapges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLargeImage)];
-//        tapges.numberOfTapsRequired = 1; // 单击
-//
-//        [self addGestureRecognizer:tapges];
-//        
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(0, 0, 100, 100);
-        button.backgroundColor = [UIColor orangeColor];
-        
-        [button addTarget:self action:@selector(showLargeImage) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button];
+        UITapGestureRecognizer *tapges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLargeImage)];
+        tapges.numberOfTapsRequired = 1; // 单击
+
+        [self addGestureRecognizer:tapges];
+        self.userInteractionEnabled = YES;
         
     }
     return self;
