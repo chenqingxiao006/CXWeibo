@@ -7,8 +7,6 @@
 //
 
 #import "CXImageView.h"
-#import "HZPhotoGroup.h"
-#import "HZPhotoItem.h"
 
 @interface CXImageView ()
 
@@ -40,26 +38,26 @@
 
 - (void)showLargeImage {
     
-    HZPhotoGroup *group = [[HZPhotoGroup alloc] init];
-
-    NSMutableArray *temp = [NSMutableArray array];
-    
-    NSMutableArray *imageArray = [NSMutableArray array];
-    for (NSDictionary *dict in self.imAgeUrls) {
-        NSString *str = [dict valueForKey:@"thumbnail_pic"];
-        [imageArray addObject:str];
-    }
-    
-
-    [imageArray enumerateObjectsUsingBlock:^(NSString *src, NSUInteger idx, BOOL *stop) {
-        HZPhotoItem *item = [[HZPhotoItem alloc] init];
-        item.thumbnail_pic = src;
-        [temp addObject:item];
-    }];
-    
-    group.photoItemArray = [temp copy];
-    
-    [self addSubview:group];
+//    HZPhotoGroup *group = [[HZPhotoGroup alloc] init];
+//
+//    NSMutableArray *temp = [NSMutableArray array];
+//    
+//    NSMutableArray *imageArray = [NSMutableArray array];
+//    for (NSDictionary *dict in self.imAgeUrls) {
+//        NSString *str = [dict valueForKey:@"thumbnail_pic"];
+//        [imageArray addObject:str];
+//    }
+//    
+//
+//    [imageArray enumerateObjectsUsingBlock:^(NSString *src, NSUInteger idx, BOOL *stop) {
+//        HZPhotoItem *item = [[HZPhotoItem alloc] init];
+//        item.thumbnail_pic = src;
+//        [temp addObject:item];
+//    }];
+//    
+//    group.photoItemArray = [temp copy];
+//    
+//    [self addSubview:group];
 }
 
 @end
