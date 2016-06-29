@@ -40,6 +40,10 @@
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
 		955375011C2047DB004C933D /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375001C2047DB004C933D /* CXBaseViewController.m */; };
 		959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 959712351C20FFF5000AF631 /* UIView+Extension.m */; };
+		95DE314F1D237D1D00A8E7A4 /* CYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE31481D237D1D00A8E7A4 /* CYLPlusButton.m */; };
+		95DE31501D237D1D00A8E7A4 /* CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE314A1D237D1D00A8E7A4 /* CYLTabBar.m */; };
+		95DE31511D237D1D00A8E7A4 /* CYLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE314C1D237D1D00A8E7A4 /* CYLTabBarController.m */; };
+		95DE31521D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE314E1D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +131,14 @@
 		955375001C2047DB004C933D /* CXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseViewController.m; sourceTree = "<group>"; };
 		959712341C20FFF5000AF631 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		959712351C20FFF5000AF631 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		95DE31471D237D1D00A8E7A4 /* CYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButton.h; sourceTree = "<group>"; };
+		95DE31481D237D1D00A8E7A4 /* CYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButton.m; sourceTree = "<group>"; };
+		95DE31491D237D1D00A8E7A4 /* CYLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBar.h; sourceTree = "<group>"; };
+		95DE314A1D237D1D00A8E7A4 /* CYLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLTabBar.m; sourceTree = "<group>"; };
+		95DE314B1D237D1D00A8E7A4 /* CYLTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLTabBarController.h; sourceTree = "<group>"; };
+		95DE314C1D237D1D00A8E7A4 /* CYLTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYLTabBarController.m; sourceTree = "<group>"; };
+		95DE314D1D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CYLTabBarControllerExtention.h"; sourceTree = "<group>"; };
+		95DE314E1D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CYLTabBarControllerExtention.m"; sourceTree = "<group>"; };
 		B7428FA0EF650175DEC9AEC6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -358,6 +370,7 @@
 		9537A66D1C1FEA8F006EEF33 /* CXWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				95DE31451D237CF600A8E7A4 /* Vendors */,
 				9521069B1C43B4740084CAF3 /* Main */,
 				955374F01C2013F7004C933D /* CXKit */,
 				9537A6711C1FEA8F006EEF33 /* AppDelegate.h */,
@@ -452,6 +465,29 @@
 				950CFF891C2288BD001FAC4E /* CXTabBar.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		95DE31451D237CF600A8E7A4 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				95DE31461D237D1100A8E7A4 /* CYLTabBarController */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		95DE31461D237D1100A8E7A4 /* CYLTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				95DE31471D237D1D00A8E7A4 /* CYLPlusButton.h */,
+				95DE31481D237D1D00A8E7A4 /* CYLPlusButton.m */,
+				95DE31491D237D1D00A8E7A4 /* CYLTabBar.h */,
+				95DE314A1D237D1D00A8E7A4 /* CYLTabBar.m */,
+				95DE314B1D237D1D00A8E7A4 /* CYLTabBarController.h */,
+				95DE314C1D237D1D00A8E7A4 /* CYLTabBarController.m */,
+				95DE314D1D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.h */,
+				95DE314E1D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.m */,
+			);
+			path = CYLTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -629,9 +665,11 @@
 				953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */,
 				955374FE1C203C21004C933D /* CXNavigationController.m in Sources */,
 				955375011C2047DB004C933D /* CXBaseViewController.m in Sources */,
+				95DE31501D237D1D00A8E7A4 /* CYLTabBar.m in Sources */,
 				952106CF1C43B4740084CAF3 /* CXMessageViewController.m in Sources */,
 				95226E791C21514D006DC853 /* CXProgressHUD.m in Sources */,
 				952106D01C43B4740084CAF3 /* CXLoginViewController.m in Sources */,
+				95DE31521D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
 				952106D41C43B4740084CAF3 /* CXPersonalViewController.m in Sources */,
 				952106D21C43B4740084CAF3 /* CXAccount.m in Sources */,
 				952106961C43B29E0084CAF3 /* CXTabBarViewController.m in Sources */,
@@ -646,7 +684,9 @@
 				952106CD1C43B4740084CAF3 /* CXHomeStatueCell.m in Sources */,
 				954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */,
 				95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */,
+				95DE31511D237D1D00A8E7A4 /* CYLTabBarController.m in Sources */,
 				952106DC1C43DA890084CAF3 /* NSDate+loaclDate.m in Sources */,
+				95DE314F1D237D1D00A8E7A4 /* CYLPlusButton.m in Sources */,
 				952106CC1C43B4740084CAF3 /* CXUserManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
