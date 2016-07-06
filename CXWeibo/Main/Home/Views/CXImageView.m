@@ -7,8 +7,9 @@
 //
 
 #import "CXImageView.h"
+#import "STPhotoBrowserController.h"
 
-@interface CXImageView ()
+@interface CXImageView ()<STPhotoBrowserDelegate>
 
 @property (nonatomic, strong) NSArray *imAgeUrls;
 @property (nonatomic, strong) NSNumber *index;
@@ -37,46 +38,29 @@
 }
 
 - (void)showLargeImage {
+    STPhotoBrowserController *browserVc = [[STPhotoBrowserController alloc] init];
+    browserVc.sourceImagesContainerView = self.superview; // 原图的父控件
+    browserVc.countImage = self.imAgeUrls.count; // 图片总数
+    browserVc.currentPage = [self.index integerValue];
+    browserVc.delegate = self;
+    [browserVc show];
+}
+
+#pragma mark - STPhotoBrowserDelegate
+
+- (UIImage *_Nonnull)photoBrowser:(STPhotoBrowserController *_Nullable)browser
+         placeholderImageForIndex:(NSInteger)index {
+    return self.image;
+}
+
+- (NSURL *_Nullable)photoBrowser:(STPhotoBrowserController *_Nullable)browser
+     highQualityImageURLForIndex:(NSInteger)index {
+    NSString *urlStr = [self.imAgeUrls[index] objectForKey:@"thumbnail_pic"];
     
-//    HZPhotoGroup *group = [[HZPhotoGroup alloc] init];
-//
-//    NSMutableArray *temp = [NSMutableArray array];
-//    
-//    NSMutableArray *imageArray = [NSMutableArray array];
-//    for (NSDictionary *dict in self.imAgeUrls) {
-//        NSString *str = [dict valueForKey:@"thumbnail_pic"];
-//        [imageArray addObject:str];
-//    }
-//    
-//
-//    [imageArray enumerateObjectsUsingBlock:^(NSString *src, NSUInteger idx, BOOL *stop) {
-//        HZPhotoItem *item = [[HZPhotoItem alloc] init];
-//        item.thumbnail_pic = src;
-//        [temp addObject:item];
-//    }];
-//    
-//    group.photoItemArray = [temp copy];
-//    
-//    [self addSubview:group];
+    NSString *largeUrl = [urlStr stringByReplacingCharactersInRange:NSMakeRange(22, 9) withString:@"large"];
+    
+    return [NSURL URLWithString:largeUrl];
+
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
