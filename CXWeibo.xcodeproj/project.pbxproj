@@ -37,6 +37,13 @@
 		9537A67E1C1FEA8F006EEF33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9537A67C1C1FEA8F006EEF33 /* LaunchScreen.storyboard */; };
 		9537A6891C1FEA8F006EEF33 /* CXWeiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6881C1FEA8F006EEF33 /* CXWeiboTests.m */; };
 		9537A6941C1FEA8F006EEF33 /* CXWeiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9537A6931C1FEA8F006EEF33 /* CXWeiboUITests.m */; };
+		953E489E1D2F4D4A00DC8E10 /* STConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E48901D2F4D4A00DC8E10 /* STConst.m */; };
+		953E489F1D2F4D4A00DC8E10 /* STUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E48921D2F4D4A00DC8E10 /* STUI.m */; };
+		953E48A01D2F4D4A00DC8E10 /* UIView+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E48941D2F4D4A00DC8E10 /* UIView+ST.m */; };
+		953E48A11D2F4D4A00DC8E10 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E48971D2F4D4A00DC8E10 /* STAlertView.m */; };
+		953E48A21D2F4D4A00DC8E10 /* STIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E48991D2F4D4A00DC8E10 /* STIndicatorView.m */; };
+		953E48A31D2F4D4A00DC8E10 /* STPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E489B1D2F4D4A00DC8E10 /* STPhotoBrowserController.m */; };
+		953E48A41D2F4D4A00DC8E10 /* STPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953E489D1D2F4D4A00DC8E10 /* STPhotoBrowserView.m */; };
 		953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 953F21F01C3267C000D50649 /* CXBaseGradientView.m */; };
 		954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22CA1C7EE9D6000AC0E9 /* CXImageView.m */; };
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
@@ -126,6 +133,21 @@
 		9537A68F1C1FEA8F006EEF33 /* CXWeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CXWeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9537A6931C1FEA8F006EEF33 /* CXWeiboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXWeiboUITests.m; sourceTree = "<group>"; };
 		9537A6951C1FEA8F006EEF33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		953E488E1D2F4D4A00DC8E10 /* STConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConfig.h; sourceTree = "<group>"; };
+		953E488F1D2F4D4A00DC8E10 /* STConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConst.h; sourceTree = "<group>"; };
+		953E48901D2F4D4A00DC8E10 /* STConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConst.m; sourceTree = "<group>"; };
+		953E48911D2F4D4A00DC8E10 /* STUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUI.h; sourceTree = "<group>"; };
+		953E48921D2F4D4A00DC8E10 /* STUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUI.m; sourceTree = "<group>"; };
+		953E48931D2F4D4A00DC8E10 /* UIView+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ST.h"; sourceTree = "<group>"; };
+		953E48941D2F4D4A00DC8E10 /* UIView+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ST.m"; sourceTree = "<group>"; };
+		953E48961D2F4D4A00DC8E10 /* STAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertView.h; sourceTree = "<group>"; };
+		953E48971D2F4D4A00DC8E10 /* STAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAlertView.m; sourceTree = "<group>"; };
+		953E48981D2F4D4A00DC8E10 /* STIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STIndicatorView.h; sourceTree = "<group>"; };
+		953E48991D2F4D4A00DC8E10 /* STIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STIndicatorView.m; sourceTree = "<group>"; };
+		953E489A1D2F4D4A00DC8E10 /* STPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhotoBrowserController.h; sourceTree = "<group>"; };
+		953E489B1D2F4D4A00DC8E10 /* STPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPhotoBrowserController.m; sourceTree = "<group>"; };
+		953E489C1D2F4D4A00DC8E10 /* STPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhotoBrowserView.h; sourceTree = "<group>"; };
+		953E489D1D2F4D4A00DC8E10 /* STPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPhotoBrowserView.m; sourceTree = "<group>"; };
 		953F21EF1C3267C000D50649 /* CXBaseGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXBaseGradientView.h; sourceTree = "<group>"; };
 		953F21F01C3267C000D50649 /* CXBaseGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseGradientView.m; sourceTree = "<group>"; };
 		954D22C91C7EE9D5000AC0E9 /* CXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXImageView.h; sourceTree = "<group>"; };
@@ -427,6 +449,44 @@
 			path = CXWeiboUITests;
 			sourceTree = "<group>";
 		};
+		953E488C1D2F4D4A00DC8E10 /* STPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				953E488D1D2F4D4A00DC8E10 /* STPhotoBrowserConfig */,
+				953E48951D2F4D4A00DC8E10 /* STPhotoBrowserView */,
+			);
+			path = STPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		953E488D1D2F4D4A00DC8E10 /* STPhotoBrowserConfig */ = {
+			isa = PBXGroup;
+			children = (
+				953E488E1D2F4D4A00DC8E10 /* STConfig.h */,
+				953E488F1D2F4D4A00DC8E10 /* STConst.h */,
+				953E48901D2F4D4A00DC8E10 /* STConst.m */,
+				953E48911D2F4D4A00DC8E10 /* STUI.h */,
+				953E48921D2F4D4A00DC8E10 /* STUI.m */,
+				953E48931D2F4D4A00DC8E10 /* UIView+ST.h */,
+				953E48941D2F4D4A00DC8E10 /* UIView+ST.m */,
+			);
+			path = STPhotoBrowserConfig;
+			sourceTree = "<group>";
+		};
+		953E48951D2F4D4A00DC8E10 /* STPhotoBrowserView */ = {
+			isa = PBXGroup;
+			children = (
+				953E48961D2F4D4A00DC8E10 /* STAlertView.h */,
+				953E48971D2F4D4A00DC8E10 /* STAlertView.m */,
+				953E48981D2F4D4A00DC8E10 /* STIndicatorView.h */,
+				953E48991D2F4D4A00DC8E10 /* STIndicatorView.m */,
+				953E489A1D2F4D4A00DC8E10 /* STPhotoBrowserController.h */,
+				953E489B1D2F4D4A00DC8E10 /* STPhotoBrowserController.m */,
+				953E489C1D2F4D4A00DC8E10 /* STPhotoBrowserView.h */,
+				953E489D1D2F4D4A00DC8E10 /* STPhotoBrowserView.m */,
+			);
+			path = STPhotoBrowserView;
+			sourceTree = "<group>";
+		};
 		955374F01C2013F7004C933D /* CXKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +547,7 @@
 		95DE31451D237CF600A8E7A4 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				953E488C1D2F4D4A00DC8E10 /* STPhotoBrowser */,
 				02FCADC91D2F3DC600CD3FF0 /* ZTabBarController */,
 				95DE31461D237D1100A8E7A4 /* CYLTabBarController */,
 			);
@@ -679,27 +740,34 @@
 				9537A6731C1FEA8F006EEF33 /* AppDelegate.m in Sources */,
 				959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */,
 				02FCADCF1D2F3E9200CD3FF0 /* ZBaseNavigationController.m in Sources */,
+				953E48A31D2F4D4A00DC8E10 /* STPhotoBrowserController.m in Sources */,
 				952106CE1C43B4740084CAF3 /* CXStatuePicView.m in Sources */,
 				952106C91C43B4740084CAF3 /* CXHomeModel.m in Sources */,
 				953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */,
 				955374FE1C203C21004C933D /* CXNavigationController.m in Sources */,
 				955375011C2047DB004C933D /* CXBaseViewController.m in Sources */,
 				95DE31501D237D1D00A8E7A4 /* CYLTabBar.m in Sources */,
+				953E489F1D2F4D4A00DC8E10 /* STUI.m in Sources */,
 				952106CF1C43B4740084CAF3 /* CXMessageViewController.m in Sources */,
 				95226E791C21514D006DC853 /* CXProgressHUD.m in Sources */,
+				953E48A01D2F4D4A00DC8E10 /* UIView+ST.m in Sources */,
 				952106D01C43B4740084CAF3 /* CXLoginViewController.m in Sources */,
 				95DE31521D237D1D00A8E7A4 /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
+				953E489E1D2F4D4A00DC8E10 /* STConst.m in Sources */,
 				952106D41C43B4740084CAF3 /* CXPersonalViewController.m in Sources */,
 				952106D21C43B4740084CAF3 /* CXAccount.m in Sources */,
 				952106961C43B29E0084CAF3 /* CXTabBarViewController.m in Sources */,
 				952106C71C43B4740084CAF3 /* CXHomeViewController.m in Sources */,
 				952106D11C43B4740084CAF3 /* CXOauthController.m in Sources */,
+				953E48A41D2F4D4A00DC8E10 /* STPhotoBrowserView.m in Sources */,
 				952106C81C43B4740084CAF3 /* CXPostWeiboViewController.m in Sources */,
+				953E48A11D2F4D4A00DC8E10 /* STAlertView.m in Sources */,
 				950CFF8A1C2288BD001FAC4E /* CXTabBar.m in Sources */,
 				952106D51C43B4740084CAF3 /* CXSearchViewController.m in Sources */,
 				952106CA1C43B4740084CAF3 /* CXHomeStatue.m in Sources */,
 				952106CB1C43B4740084CAF3 /* CXStatusTools.m in Sources */,
 				9537A6701C1FEA8F006EEF33 /* main.m in Sources */,
+				953E48A21D2F4D4A00DC8E10 /* STIndicatorView.m in Sources */,
 				02FCADCC1D2F3E1F00CD3FF0 /* ZTabbarController.m in Sources */,
 				952106CD1C43B4740084CAF3 /* CXHomeStatueCell.m in Sources */,
 				954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */,
