@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02FCADCC1D2F3E1F00CD3FF0 /* ZTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCADCB1D2F3E1F00CD3FF0 /* ZTabbarController.m */; };
+		02FCADCF1D2F3E9200CD3FF0 /* ZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCADCE1D2F3E9200CD3FF0 /* ZBaseNavigationController.m */; };
 		747F273AF959882C7B4C7D7E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7428FA0EF650175DEC9AEC6 /* libPods.a */; };
 		950CFF8A1C2288BD001FAC4E /* CXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 950CFF891C2288BD001FAC4E /* CXTabBar.m */; };
 		952106961C43B29E0084CAF3 /* CXTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 952106951C43B29E0084CAF3 /* CXTabBarViewController.m */; };
@@ -39,13 +41,6 @@
 		954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D22CA1C7EE9D6000AC0E9 /* CXImageView.m */; };
 		955374FE1C203C21004C933D /* CXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955374FD1C203C21004C933D /* CXNavigationController.m */; };
 		955375011C2047DB004C933D /* CXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 955375001C2047DB004C933D /* CXBaseViewController.m */; };
-		957808F91D2D01C9001DA638 /* STConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808EB1D2D01C9001DA638 /* STConst.m */; };
-		957808FA1D2D01C9001DA638 /* STUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808ED1D2D01C9001DA638 /* STUI.m */; };
-		957808FB1D2D01C9001DA638 /* UIView+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808EF1D2D01C9001DA638 /* UIView+ST.m */; };
-		957808FC1D2D01C9001DA638 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808F21D2D01C9001DA638 /* STAlertView.m */; };
-		957808FD1D2D01C9001DA638 /* STIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808F41D2D01C9001DA638 /* STIndicatorView.m */; };
-		957808FE1D2D01C9001DA638 /* STPhotoBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808F61D2D01C9001DA638 /* STPhotoBrowserController.m */; };
-		957808FF1D2D01C9001DA638 /* STPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 957808F81D2D01C9001DA638 /* STPhotoBrowserView.m */; };
 		959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 959712351C20FFF5000AF631 /* UIView+Extension.m */; };
 		95DE314F1D237D1D00A8E7A4 /* CYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE31481D237D1D00A8E7A4 /* CYLPlusButton.m */; };
 		95DE31501D237D1D00A8E7A4 /* CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DE314A1D237D1D00A8E7A4 /* CYLTabBar.m */; };
@@ -71,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02FCADCA1D2F3E1F00CD3FF0 /* ZTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTabbarController.h; sourceTree = "<group>"; };
+		02FCADCB1D2F3E1F00CD3FF0 /* ZTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTabbarController.m; sourceTree = "<group>"; };
+		02FCADCD1D2F3E9200CD3FF0 /* ZBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZBaseNavigationController.h; path = ../ZBaseNavigationController.h; sourceTree = "<group>"; };
+		02FCADCE1D2F3E9200CD3FF0 /* ZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZBaseNavigationController.m; path = ../ZBaseNavigationController.m; sourceTree = "<group>"; };
 		5685E7CA60E237B822641285 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		66EC25EE28688D690C05EA31 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		950CFF881C2288BD001FAC4E /* CXTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXTabBar.h; sourceTree = "<group>"; };
@@ -136,21 +135,6 @@
 		955374FD1C203C21004C933D /* CXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXNavigationController.m; sourceTree = "<group>"; };
 		955374FF1C2047DB004C933D /* CXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXBaseViewController.h; sourceTree = "<group>"; };
 		955375001C2047DB004C933D /* CXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXBaseViewController.m; sourceTree = "<group>"; };
-		957808E91D2D01C9001DA638 /* STConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConfig.h; sourceTree = "<group>"; };
-		957808EA1D2D01C9001DA638 /* STConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConst.h; sourceTree = "<group>"; };
-		957808EB1D2D01C9001DA638 /* STConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConst.m; sourceTree = "<group>"; };
-		957808EC1D2D01C9001DA638 /* STUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUI.h; sourceTree = "<group>"; };
-		957808ED1D2D01C9001DA638 /* STUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUI.m; sourceTree = "<group>"; };
-		957808EE1D2D01C9001DA638 /* UIView+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ST.h"; sourceTree = "<group>"; };
-		957808EF1D2D01C9001DA638 /* UIView+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ST.m"; sourceTree = "<group>"; };
-		957808F11D2D01C9001DA638 /* STAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertView.h; sourceTree = "<group>"; };
-		957808F21D2D01C9001DA638 /* STAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAlertView.m; sourceTree = "<group>"; };
-		957808F31D2D01C9001DA638 /* STIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STIndicatorView.h; sourceTree = "<group>"; };
-		957808F41D2D01C9001DA638 /* STIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STIndicatorView.m; sourceTree = "<group>"; };
-		957808F51D2D01C9001DA638 /* STPhotoBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhotoBrowserController.h; sourceTree = "<group>"; };
-		957808F61D2D01C9001DA638 /* STPhotoBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPhotoBrowserController.m; sourceTree = "<group>"; };
-		957808F71D2D01C9001DA638 /* STPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPhotoBrowserView.h; sourceTree = "<group>"; };
-		957808F81D2D01C9001DA638 /* STPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPhotoBrowserView.m; sourceTree = "<group>"; };
 		959712341C20FFF5000AF631 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		959712351C20FFF5000AF631 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		95DE31471D237D1D00A8E7A4 /* CYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYLPlusButton.h; sourceTree = "<group>"; };
@@ -190,6 +174,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02FCADC91D2F3DC600CD3FF0 /* ZTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				02FCADCD1D2F3E9200CD3FF0 /* ZBaseNavigationController.h */,
+				02FCADCE1D2F3E9200CD3FF0 /* ZBaseNavigationController.m */,
+				02FCADCA1D2F3E1F00CD3FF0 /* ZTabbarController.h */,
+				02FCADCB1D2F3E1F00CD3FF0 /* ZTabbarController.m */,
+			);
+			path = ZTabBarController;
+			sourceTree = "<group>";
+		};
 		465D90F750636B029A32D7B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,47 +484,10 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		957808E71D2D01C9001DA638 /* STPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				957808E81D2D01C9001DA638 /* STPhotoBrowserConfig */,
-				957808F01D2D01C9001DA638 /* STPhotoBrowserView */,
-			);
-			path = STPhotoBrowser;
-			sourceTree = "<group>";
-		};
-		957808E81D2D01C9001DA638 /* STPhotoBrowserConfig */ = {
-			isa = PBXGroup;
-			children = (
-				957808E91D2D01C9001DA638 /* STConfig.h */,
-				957808EA1D2D01C9001DA638 /* STConst.h */,
-				957808EB1D2D01C9001DA638 /* STConst.m */,
-				957808EC1D2D01C9001DA638 /* STUI.h */,
-				957808ED1D2D01C9001DA638 /* STUI.m */,
-				957808EE1D2D01C9001DA638 /* UIView+ST.h */,
-				957808EF1D2D01C9001DA638 /* UIView+ST.m */,
-			);
-			path = STPhotoBrowserConfig;
-			sourceTree = "<group>";
-		};
-		957808F01D2D01C9001DA638 /* STPhotoBrowserView */ = {
-			isa = PBXGroup;
-			children = (
-				957808F11D2D01C9001DA638 /* STAlertView.h */,
-				957808F21D2D01C9001DA638 /* STAlertView.m */,
-				957808F31D2D01C9001DA638 /* STIndicatorView.h */,
-				957808F41D2D01C9001DA638 /* STIndicatorView.m */,
-				957808F51D2D01C9001DA638 /* STPhotoBrowserController.h */,
-				957808F61D2D01C9001DA638 /* STPhotoBrowserController.m */,
-				957808F71D2D01C9001DA638 /* STPhotoBrowserView.h */,
-				957808F81D2D01C9001DA638 /* STPhotoBrowserView.m */,
-			);
-			path = STPhotoBrowserView;
-			sourceTree = "<group>";
-		};
 		95DE31451D237CF600A8E7A4 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				02FCADC91D2F3DC600CD3FF0 /* ZTabBarController */,
 				95DE31461D237D1100A8E7A4 /* CYLTabBarController */,
 			);
 			path = Vendors;
@@ -538,7 +496,6 @@
 		95DE31461D237D1100A8E7A4 /* CYLTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				957808E71D2D01C9001DA638 /* STPhotoBrowser */,
 				95DE31471D237D1D00A8E7A4 /* CYLPlusButton.h */,
 				95DE31481D237D1D00A8E7A4 /* CYLPlusButton.m */,
 				95DE31491D237D1D00A8E7A4 /* CYLTabBar.h */,
@@ -721,6 +678,7 @@
 				952106D31C43B4740084CAF3 /* CXAccountTool.m in Sources */,
 				9537A6731C1FEA8F006EEF33 /* AppDelegate.m in Sources */,
 				959712361C20FFF5000AF631 /* UIView+Extension.m in Sources */,
+				02FCADCF1D2F3E9200CD3FF0 /* ZBaseNavigationController.m in Sources */,
 				952106CE1C43B4740084CAF3 /* CXStatuePicView.m in Sources */,
 				952106C91C43B4740084CAF3 /* CXHomeModel.m in Sources */,
 				953F21F11C3267C000D50649 /* CXBaseGradientView.m in Sources */,
@@ -736,26 +694,20 @@
 				952106961C43B29E0084CAF3 /* CXTabBarViewController.m in Sources */,
 				952106C71C43B4740084CAF3 /* CXHomeViewController.m in Sources */,
 				952106D11C43B4740084CAF3 /* CXOauthController.m in Sources */,
-				957808F91D2D01C9001DA638 /* STConst.m in Sources */,
 				952106C81C43B4740084CAF3 /* CXPostWeiboViewController.m in Sources */,
 				950CFF8A1C2288BD001FAC4E /* CXTabBar.m in Sources */,
-				957808FB1D2D01C9001DA638 /* UIView+ST.m in Sources */,
 				952106D51C43B4740084CAF3 /* CXSearchViewController.m in Sources */,
 				952106CA1C43B4740084CAF3 /* CXHomeStatue.m in Sources */,
 				952106CB1C43B4740084CAF3 /* CXStatusTools.m in Sources */,
 				9537A6701C1FEA8F006EEF33 /* main.m in Sources */,
-				957808FE1D2D01C9001DA638 /* STPhotoBrowserController.m in Sources */,
+				02FCADCC1D2F3E1F00CD3FF0 /* ZTabbarController.m in Sources */,
 				952106CD1C43B4740084CAF3 /* CXHomeStatueCell.m in Sources */,
 				954D22CB1C7EE9D6000AC0E9 /* CXImageView.m in Sources */,
-				957808FF1D2D01C9001DA638 /* STPhotoBrowserView.m in Sources */,
 				95226E7C1C2157A1006DC853 /* CXNetManager.m in Sources */,
 				95DE31511D237D1D00A8E7A4 /* CYLTabBarController.m in Sources */,
 				952106DC1C43DA890084CAF3 /* NSDate+loaclDate.m in Sources */,
 				95DE314F1D237D1D00A8E7A4 /* CYLPlusButton.m in Sources */,
 				952106CC1C43B4740084CAF3 /* CXUserManager.m in Sources */,
-				957808FA1D2D01C9001DA638 /* STUI.m in Sources */,
-				957808FC1D2D01C9001DA638 /* STAlertView.m in Sources */,
-				957808FD1D2D01C9001DA638 /* STIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

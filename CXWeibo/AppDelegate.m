@@ -14,6 +14,7 @@
 #import "CXNavigationController.h"
 #import "CXHomeViewController.h"
 
+#import "ZTabBarController.h"
 @interface AppDelegate ()
 
 @property (strong, nonatomic) CXTabBarViewController *tabVC;
@@ -25,31 +26,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
-    
-    
-    
-    //1.创建Window
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+//    //1.创建Window
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//    //2.设置控制器为Window的根控制器
+//    if([CXAccountTool shareAccountTool].account){
+//        // 用户已经授权过
+//        CXTabBarViewController *tabBarVC = [[CXTabBarViewController alloc] init];
+//        self.window.rootViewController = tabBarVC;
+//        self.tabVC = tabBarVC;
+//    }else{
+//        // 未授权加载授权页面
+//        CXOauthController *oauthVC = [[CXOauthController alloc] init];
+//        self.window.rootViewController = oauthVC;
+//    }
+
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
 
     //2.设置控制器为Window的根控制器
     if([CXAccountTool shareAccountTool].account){
         // 用户已经授权过
-        CXTabBarViewController *tabBarVC = [[CXTabBarViewController alloc] init];
+        ZTabbarController *tabBarVC = [[ZTabbarController alloc] init];
         self.window.rootViewController = tabBarVC;
-        self.tabVC = tabBarVC;
     }else{
         // 未授权加载授权页面
         CXOauthController *oauthVC = [[CXOauthController alloc] init];
         self.window.rootViewController = oauthVC;
     }
-    
-    
-    
-    
-    // 4.显示出来
     [self.window makeKeyAndVisible];
+    [self setupNavBar];
     
     //0.添加3D Touch
     UIApplicationShortcutIcon *firstItemIcon = [UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeAdd];
@@ -129,6 +137,11 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+#pragma mark - setupNavBar
+- (void)setupNavBar{
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
 }
 
 @end

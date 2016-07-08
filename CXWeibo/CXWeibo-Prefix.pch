@@ -24,7 +24,12 @@
 #define ACCESS_TOKENURL                    @"https://api.weibo.com/oauth2/access_token"
 #define AUTHORIZE_URL [BASE_URL stringByAppendingPathComponent:@"oauth2/authorize"]
 
-
+//打印相关
+#ifdef DEBUG
+#define ZLog(...) NSLog(__VA_ARGS__)
+#else
+#define ZLog(...)
+#endif
 
 
 
